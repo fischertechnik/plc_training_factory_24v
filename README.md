@@ -9,14 +9,15 @@ The standard demo scenario is implemented with the [www.fischertechnik-cloud.com
 The following diagram shows the communication between the 3 controllers PLC, TXT controller and IOT gateway (Raspberry Pi 4):
 ![overview_communication_en](doc/overview_communication_en.png "overview communication")
 
-All programs you will find in the following folder:
+All programs you will find in the following folders:
 * **PLC_S7_1500** (PLC S7 1500 project, TIA Portal v16)
 * **PLC_S7_1500_sources** (PLC sources as SCL Structured Control Language)
 * **PLC_S7_1500_exercises** (PLC S7 1500 exercises, TIA Portal v16)
+* **Node-RED** (SD card image, Node-RED flows)
 * **TxtGatewayPLC.cloud** (C program for TXT controller, [TxtGatewayPLC](https://github.com/fischertechnik/plc_training_factory_24v/tree/master/TxtGatewayPLC))
 
 ## Network
-The next picture shows the [network](doc/Network_Config.md) overview with the TXT controllers.
+The next picture shows the network overview with the TXT controllers.
 ![factory_overview_en](doc/factory_overview_en.png "factory overview")
 
 The factory consists of the following stations:
