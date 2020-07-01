@@ -9,7 +9,7 @@ The standard demo scenario is implemented with the [www.fischertechnik-cloud.com
 The following diagram shows the communication between the 3 controllers PLC, TXT controller and IOT gateway (Raspberry Pi 4):
 ![overview_communication_en](doc/overview_communication_en.png "overview communication")
 
-All programs you will find in the following folders:
+The following folder structure exist:
 * **PLC_S7_1500** (PLC S7 1500 project, TIA Portal v16)
 * **PLC_S7_1500_sources** (PLC sources as SCL Structured Control Language)
 * **PLC_S7_1500_exercises** (PLC S7 1500 exercises, TIA Portal v16)
