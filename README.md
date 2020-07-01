@@ -31,5 +31,3 @@ The factory consists of the following stations:
 ## Node-RED
 The [Node-RED](https://nodered.org/) flows for the Training Factory Industry 4.0 24V you can find in [Node-RED](Node-RED/README.md) folder. 
 
-## MQTT Interface
-The [MQTT Interface](TxtSmartFactoryLib/doc/MqttInterface.md) describes the topics and the payload of the MQTT clients and the configuration of the mosquitto MQTT bridge. 
