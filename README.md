@@ -10,11 +10,14 @@ The following diagram shows the communication between the 3 controllers PLC, TXT
 ![overview_communication_en](doc/overview_communication_en.png "overview communication")
 
 The following folder structure exist:
-* **PLC_S7_1500** (PLC S7 1500 project, TIA Portal v16)
-* **PLC_S7_1500_sources** (PLC sources as SCL Structured Control Language)
-* **PLC_S7_1500_exercises** (PLC S7 1500 exercises, TIA Portal v16)
-* **Node-RED** (SD card image, Node-RED flows)
-* **TxtGatewayPLC.cloud** (C program for TXT controller, [TxtGatewayPLC](https://github.com/fischertechnik/plc_training_factory_24v/tree/master/TxtGatewayPLC))
+
+| Folder | Content |
+| --- | --- |
+| [Node-RED](Node-RED/README.md)                             | Node-RED flows, SD card image for IOT gateway        |
+| [PLC_S7_1500](PLC_S7_1500/README.md)                       | PLC S7 1500 project (TIA Portal v16)                 |
+| [PLC_S7_1500_sources](PLC_S7_1500_sources/README.md)       | PLC sources as SCL (Structured Control Language)     |
+| [PLC_S7_1500_exercises](PLC_S7_1500_exercises/README.md)   | PLC S7 1500 exercises (TIA Portal v16)               |
+| [TxtGatewayPLC](TxtGatewayPLC/README.md)                   | C program TxtGatewayPLC.cloud for the TXT controller |
 
 ## Network
 The next picture shows the network overview with the controllers.
