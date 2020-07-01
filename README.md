@@ -29,7 +29,7 @@ The factory consists of the following stations:
 * **SLD**: Sorting Line with Color Detection
 
 ## Node-RED
-An example for  Training Factory Industry 4.0 24V and [Node-RED](https://nodered.org/) you can find in [Node-RED folder](Node-RED/README.md). 
+The [Node-RED](https://nodered.org/) flows for the Training Factory Industry 4.0 24V you can find in [Node-RED](Node-RED/README.md) folder. 
 
 ## MQTT Interface
 The [MQTT Interface](TxtSmartFactoryLib/doc/MqttInterface.md) describes the topics and the payload of the MQTT clients and the configuration of the mosquitto MQTT bridge. 
