@@ -7,8 +7,8 @@ This project contains the PLC programs, the IOT gateway SD card image with Node-
 | --- | --- |
 | [Node-RED](Node-RED/README.md)                             | Node-RED flows, SD card image for IOT gateway        |
 | [PLC_S7_1500](PLC_S7_1500/README.md)                       | PLC S7 1500 project (TIA Portal v16)                 |
-| [PLC_S7_1500_sources](PLC_S7_1500_sources/README.md)       | PLC sources as SCL (Structured Control Language)     |
 | [PLC_S7_1500_exercises](PLC_S7_1500_exercises/README.md)   | PLC S7 1500 exercises (TIA Portal v16)               |
+| [PLC_SCL_sources](PLC_SCL_sources/README.md)               | PLC sources as SCL (Structured Control Language)     |
 | [TxtGatewayPLC](TxtGatewayPLC/README.md)                   | C program TxtGatewayPLC.cloud for the TXT controller |
 
 ## Controllers
