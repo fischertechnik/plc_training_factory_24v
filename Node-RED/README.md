@@ -8,15 +8,3 @@ The flows contain a local dashboard for *Training Factory Industry 4.0 24V*.
 Node-RED dependencies:
   * [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard)
 
-
-### Flows
-![Flows-Pub](flows-pub.png)
-
-![Flows-Sub](flows-sub.png)
-
-![Flows-Conf](flows-conf.png)
-
-### Dashboard
-![Dashboard-Overview](dashboard-overview.png)
-
-![Dashboard-Graph](dashboard-graph.png)
