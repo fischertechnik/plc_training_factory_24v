@@ -17,7 +17,7 @@ The following folder structure exist:
 * **TxtGatewayPLC.cloud** (C program for TXT controller, [TxtGatewayPLC](https://github.com/fischertechnik/plc_training_factory_24v/tree/master/TxtGatewayPLC))
 
 ## Network
-The next picture shows the network overview with the TXT controllers.
+The next picture shows the network overview with the controllers.
 ![factory_overview_en](doc/factory_overview_en.png "factory overview")
 
 The factory consists of the following stations:
