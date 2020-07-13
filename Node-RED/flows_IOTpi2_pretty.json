@@ -1067,69 +1067,6 @@
 		"collapse": false
 	},
 	{
-		"id": "90b4565f.31f758",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "8cacc4a1.8c2a2",
-		"order": 1,
-		"width": 9,
-		"height": "2"
-	},
-	{
-		"id": "1cf4786b.c171e",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "2f117237.36aff6",
-		"order": 7,
-		"width": 1,
-		"height": 1
-	},
-	{
-		"id": "bdb2e574.64c788",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "2f117237.36aff6",
-		"order": 10,
-		"width": 1,
-		"height": 1
-	},
-	{
-		"id": "d3a81696.aa74d",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "2f117237.36aff6",
-		"order": 13,
-		"width": 1,
-		"height": 1
-	},
-	{
-		"id": "dde55429.6a3398",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "2f117237.36aff6",
-		"order": 16,
-		"width": 1,
-		"height": 1
-	},
-	{
-		"id": "429a901c.8a8dc",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "afaa8b63.c29268",
-		"order": 4,
-		"width": 9,
-		"height": 1
-	},
-	{
-		"id": "568d96e2.40a8a8",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "afaa8b63.c29268",
-		"order": 8,
-		"width": 9,
-		"height": 1
-	},
-	{
 		"id": "11b8901b.4c9138",
 		"type": "ui_spacer",
 		"name": "spacer",
@@ -1327,6 +1264,69 @@
 		"group": "6bb8ca6d.ccfd2c",
 		"order": 6,
 		"width": 6,
+		"height": 1
+	},
+	{
+		"id": "8b3dcb5d.9af8a",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "8cacc4a1.8c2a2",
+		"order": 1,
+		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "64c7774e.b089f8",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "8cacc4a1.8c2a2",
+		"order": 2,
+		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "67fb2afb.e0ef74",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "2f117237.36aff6",
+		"order": 7,
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "6cae479b.257738",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "2f117237.36aff6",
+		"order": 10,
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "70f6f249.8be7ac",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "2f117237.36aff6",
+		"order": 13,
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "39d2d183.ba4c06",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "afaa8b63.c29268",
+		"order": 4,
+		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "242237b0.8c5b2",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "afaa8b63.c29268",
+		"order": 8,
+		"width": 9,
 		"height": 1
 	},
 	{
@@ -8354,7 +8354,7 @@
 		"type": "function",
 		"z": "bcaa3a6a.3bdbe8",
 		"name": "read config data from PLC",
-		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //HBW\n    //Pos. Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Belt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Rack\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Rack_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack A1\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack B2\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack C3\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Vertical\"',\n        \"datatypeName\":'Int32'},\n//VGR\n//Pos Color\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSI_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos DSO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos MPO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos NFC\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos NiO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_rotate\"',\n        \"datatypeName\":'Int32'},\n    //SSC    \n    //Pos. Centre\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Vertical\"',\n        \"datatypeName\":'Int32'},\n\n    //Color Sensor Calibration\n    //DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'WORD'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'WORD'},\n\n    //Color Sensor Calibration\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'WORD'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'WORD'},\n    //Pushout Counter\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\nreturn msg;",
+		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //HBW\n    //Pos. Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Belt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Rack\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Rack_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack A1\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack B2\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack C3\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Vertical\"',\n        \"datatypeName\":'Int32'},\n//VGR\n//Pos Color\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSI_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos DSO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos MPO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos NFC\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos NiO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_rotate\"',\n        \"datatypeName\":'Int32'},\n    //SSC    \n    //Pos. Centre\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Vertical\"',\n        \"datatypeName\":'Int32'},\n\n    //Color Sensor Calibration\n    //DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'UInt16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'UInt16'},\n\n    //Color Sensor Calibration\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'UInt16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'UInt16'},\n    //Pushout Counter\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 340,
@@ -8451,7 +8451,7 @@
 		"type": "function",
 		"z": "bcaa3a6a.3bdbe8",
 		"name": "declare values",
-		"func": "var wert = msg.payload\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"write\";\n\nmsg.addressSpaceItems = [\n    //HBW\n    //Pos. Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Belt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Rack\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Rack_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack A1\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack B2\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack C3\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Vertical\"',\n        \"datatypeName\":'Int32'},\n//VGR\n//Pos Color\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSI_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos DSO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos MPO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos NFC\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos NiO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_rotate\"',\n        \"datatypeName\":'Int32'},\n    //SSC    \n    //Pos. Centre\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Vertical\"',\n        \"datatypeName\":'Int32'},\n\n    //Color Sensor Calibration\n    //DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'WORD'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'WORD'},\n\n    //Color Sensor Calibration\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'WORD'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'WORD'},\n    //Pushout Counter\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\n\nmsg.valuesToWrite = [\n                    //HBW\n                    msg.payload.HBW_di_PosBelt_Horizontal,           //[0]\n                    msg.payload.HBW_di_PosBelt_Vertical,             //[1]\n                    msg.payload.HBW_di_PosBelt_Offset_Vertical,      //[2]\n\n                    msg.payload.HBW_di_PosRack_Offset_Vertical,      //[3]\n                    msg.payload.HBW_di_PosRack_A1_Horizontal,        //[4]\n                    msg.payload.HBW_di_PosRack_A1_Vertical,          //[5]\n\n                    msg.payload.HBW_di_PosRack_B2_Horizontal,        //[6]\n                    msg.payload.HBW_di_PosRack_B2_Vertical,          //[7]\n\n                    msg.payload.HBW_di_PosRack_C3_Horizontal,        //[8]\n                    msg.payload.HBW_di_PosRack_C3_Vertical,          //[9]\n\n                    //VGR\n                    msg.payload.VGR_di_Pos_Color_horizontal,         //[10]\n                    msg.payload.VGR_di_Pos_Color_vertical,           //[11]\n                    msg.payload.VGR_di_Pos_Color_rotate,             //[12]\n                    //Pos DSI\n                    msg.payload.VGR_di_Pos_DSI_horizontal,           //[13]\n                    msg.payload.VGR_di_Pos_DSI_Collect_vertical,     //[14]\n                    msg.payload.VGR_di_Pos_DSI_Discard_vertical,     //[15]\n                    msg.payload.VGR_di_Pos_DSI_rotate,               //[16]\n                    msg.payload.VGR_di_Offset_Pos_DSI_NFC_vertical,  //[17]\n                    //Pos DSO\n                    msg.payload.VGR_di_Pos_DSO_horizontal,              //[18] \n                    msg.payload.VGR_di_Pos_DSO_Collect_vertical,        //[19]\n                    msg.payload.VGR_di_Pos_DSO_Discard_vertical,        //[20] \n                    msg.payload.VGR_di_Pos_DSO_rotate,                  //[21] \n                    msg.payload.VGR_di_Offset_Pos_DSO_vertical,         //[22]\n                    //Pos HBW\n                    msg.payload.VGR_di_Pos_HBW_horizontal,              //[23] \n                    msg.payload.VGR_di_Pos_HBW_Collect_vertical,        //[24] \n                    msg.payload.VGR_di_Pos_HBW_Discard_vertical,        //[25] \n                    msg.payload.VGR_di_Pos_HBW_rotate,                  //[26] \n                    msg.payload.VGR_di_Offset_Pos_HBW_horizontal,       //[27] \n                    msg.payload.VGR_di_Offset_Pos_HBW_vertical,         //[28] \n                    //Pos MPO\n                    msg.payload.VGR_di_Pos_MPO_horizontal,              //[29] \n                    msg.payload.VGR_di_Pos_MPO_vertical,                //[30] \n                    msg.payload.VGR_di_Pos_MPO_rotate,                  //[31] \n                    msg.payload.VGR_di_Offset_Pos_MPO_vertical,         //[32]\n                    //Pos NFC\n                    msg.payload.VGR_di_Pos_NFC_horizontal,              //[33] \n                    msg.payload.VGR_di_Pos_NFC_vertical,                //[34] \n                    msg.payload.VGR_di_Pos_NFC_rotate,                  //[35] \n                    //Pos NiO\n                    msg.payload.VGR_di_Pos_NiO_horizontal,              //[36] \n                    msg.payload.VGR_di_Pos_NiO_vertical,                //[37] \n                    msg.payload.VGR_di_Pos_NiO_rotate,                  //[38] \n                    //Pos SLD Blue\n                    msg.payload.VGR_di_Pos_SLD_Blue_horizontal,         //[39] \n                    msg.payload.VGR_di_Pos_SLD_Blue_vertical,           //[40] \n                    msg.payload.VGR_di_Pos_SLD_Blue_rotate,             //[41] \n                    //Pos SLD Red\n                    msg.payload.VGR_di_Pos_SLD_Red_horizontal,          //[42] \n                    msg.payload.VGR_di_Pos_SLD_Red_vertical,            //[43] \n                    msg.payload.VGR_di_Pos_SLD_Red_rotate,              //[44] \n                    //Pos SLD White\n                    msg.payload.VGR_di_Pos_SLD_White_horizontal,        //[45] \n                    msg.payload.VGR_di_Pos_SLD_White_vertical,          //[46] \n                    msg.payload.VGR_di_Pos_SLD_White_rotate,            //[47] \n                    //SSC\n                    //Centre\n                    msg.payload.SSC_di_PosCentre_Horizontal,         //[48]\n                    msg.payload.SSC_di_PosCentre_Vertical,           //[49]\n                    //HBW\n                    msg.payload.SSC_di_PosHBW_Horizontal,            //[50]\n                    msg.payload.SSC_di_PosHBW_Vertical,              //[51]\n\n                    //Color Sensor Calibration\n                    //DSI\n                    msg.payload.SSC_w_Threshold_Red_Blue,            //[52]\n                    msg.payload.SSC_w_Threshold_White_Red,           //[53]\n\n                    //Color Sensor Calibration\n                    //SLD\n                    msg.payload.SLD_w_Threshold_Red_Blue,            //[54]\n                    msg.payload.SLD_w_Threshold_White_Red,           //[55]\n                    \n                    //Pushout Counter\n                    //SLD\n                    msg.payload.SLD_i_CounterValue_Blue,         //[56]\n                    msg.payload.SLD_i_CounterValue_Red,          //[57]\n                    msg.payload.SLD_i_CounterValue_White,        //[58]\n\n                    ];\nreturn msg;\n\n\n",
+		"func": "var wert = msg.payload\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"write\";\n\nmsg.addressSpaceItems = [\n    //HBW\n    //Pos. Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosBelt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Belt\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Belt_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Offset Rack\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_Offset_Pos_Rack_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack A1\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_A1_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack B2\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_B2_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos. Rack C3\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"di_PosRack_C3_Vertical\"',\n        \"datatypeName\":'Int32'},\n//VGR\n//Pos Color\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_Color_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSI_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSI_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos DSO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_DSO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_DSO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Collect_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_Discard_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_HBW_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_HBW_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos MPO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_MPO_rotate\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Offset_Pos_MPO_vertical\"',\n        \"datatypeName\":'Int32'},\n//Pos NFC\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NFC_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos NiO\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_NiO_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Blue_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_Red_rotate\"',\n        \"datatypeName\":'Int32'},\n//Pos SLD White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_vertical\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_VGR\".\"di_Pos_SLD_White_rotate\"',\n        \"datatypeName\":'Int32'},\n    //SSC    \n    //Pos. Centre\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_Centre_Vertical\"',\n        \"datatypeName\":'Int32'},\n    //Pos HBW\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Horizontal\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"di_Pos_HBW_Vertical\"',\n        \"datatypeName\":'Int32'},\n\n    //Color Sensor Calibration\n    //DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'UInt16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'UInt16'},\n\n    //Color Sensor Calibration\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'UInt16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'UInt16'},\n    //Pushout Counter\n    //SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\n\nmsg.valuesToWrite = [\n                    //HBW\n                    msg.payload.HBW_di_PosBelt_Horizontal,           //[0]\n                    msg.payload.HBW_di_PosBelt_Vertical,             //[1]\n                    msg.payload.HBW_di_PosBelt_Offset_Vertical,      //[2]\n\n                    msg.payload.HBW_di_PosRack_Offset_Vertical,      //[3]\n                    msg.payload.HBW_di_PosRack_A1_Horizontal,        //[4]\n                    msg.payload.HBW_di_PosRack_A1_Vertical,          //[5]\n\n                    msg.payload.HBW_di_PosRack_B2_Horizontal,        //[6]\n                    msg.payload.HBW_di_PosRack_B2_Vertical,          //[7]\n\n                    msg.payload.HBW_di_PosRack_C3_Horizontal,        //[8]\n                    msg.payload.HBW_di_PosRack_C3_Vertical,          //[9]\n\n                    //VGR\n                    msg.payload.VGR_di_Pos_Color_horizontal,         //[10]\n                    msg.payload.VGR_di_Pos_Color_vertical,           //[11]\n                    msg.payload.VGR_di_Pos_Color_rotate,             //[12]\n                    //Pos DSI\n                    msg.payload.VGR_di_Pos_DSI_horizontal,           //[13]\n                    msg.payload.VGR_di_Pos_DSI_Collect_vertical,     //[14]\n                    msg.payload.VGR_di_Pos_DSI_Discard_vertical,     //[15]\n                    msg.payload.VGR_di_Pos_DSI_rotate,               //[16]\n                    msg.payload.VGR_di_Offset_Pos_DSI_NFC_vertical,  //[17]\n                    //Pos DSO\n                    msg.payload.VGR_di_Pos_DSO_horizontal,              //[18] \n                    msg.payload.VGR_di_Pos_DSO_Collect_vertical,        //[19]\n                    msg.payload.VGR_di_Pos_DSO_Discard_vertical,        //[20] \n                    msg.payload.VGR_di_Pos_DSO_rotate,                  //[21] \n                    msg.payload.VGR_di_Offset_Pos_DSO_vertical,         //[22]\n                    //Pos HBW\n                    msg.payload.VGR_di_Pos_HBW_horizontal,              //[23] \n                    msg.payload.VGR_di_Pos_HBW_Collect_vertical,        //[24] \n                    msg.payload.VGR_di_Pos_HBW_Discard_vertical,        //[25] \n                    msg.payload.VGR_di_Pos_HBW_rotate,                  //[26] \n                    msg.payload.VGR_di_Offset_Pos_HBW_horizontal,       //[27] \n                    msg.payload.VGR_di_Offset_Pos_HBW_vertical,         //[28] \n                    //Pos MPO\n                    msg.payload.VGR_di_Pos_MPO_horizontal,              //[29] \n                    msg.payload.VGR_di_Pos_MPO_vertical,                //[30] \n                    msg.payload.VGR_di_Pos_MPO_rotate,                  //[31] \n                    msg.payload.VGR_di_Offset_Pos_MPO_vertical,         //[32]\n                    //Pos NFC\n                    msg.payload.VGR_di_Pos_NFC_horizontal,              //[33] \n                    msg.payload.VGR_di_Pos_NFC_vertical,                //[34] \n                    msg.payload.VGR_di_Pos_NFC_rotate,                  //[35] \n                    //Pos NiO\n                    msg.payload.VGR_di_Pos_NiO_horizontal,              //[36] \n                    msg.payload.VGR_di_Pos_NiO_vertical,                //[37] \n                    msg.payload.VGR_di_Pos_NiO_rotate,                  //[38] \n                    //Pos SLD Blue\n                    msg.payload.VGR_di_Pos_SLD_Blue_horizontal,         //[39] \n                    msg.payload.VGR_di_Pos_SLD_Blue_vertical,           //[40] \n                    msg.payload.VGR_di_Pos_SLD_Blue_rotate,             //[41] \n                    //Pos SLD Red\n                    msg.payload.VGR_di_Pos_SLD_Red_horizontal,          //[42] \n                    msg.payload.VGR_di_Pos_SLD_Red_vertical,            //[43] \n                    msg.payload.VGR_di_Pos_SLD_Red_rotate,              //[44] \n                    //Pos SLD White\n                    msg.payload.VGR_di_Pos_SLD_White_horizontal,        //[45] \n                    msg.payload.VGR_di_Pos_SLD_White_vertical,          //[46] \n                    msg.payload.VGR_di_Pos_SLD_White_rotate,            //[47] \n                    //SSC\n                    //Centre\n                    msg.payload.SSC_di_PosCentre_Horizontal,         //[48]\n                    msg.payload.SSC_di_PosCentre_Vertical,           //[49]\n                    //HBW\n                    msg.payload.SSC_di_PosHBW_Horizontal,            //[50]\n                    msg.payload.SSC_di_PosHBW_Vertical,              //[51]\n\n                    //Color Sensor Calibration\n                    //DSI\n                    msg.payload.SSC_w_Threshold_Red_Blue,            //[52]\n                    msg.payload.SSC_w_Threshold_White_Red,           //[53]\n\n                    //Color Sensor Calibration\n                    //SLD\n                    msg.payload.SLD_w_Threshold_Red_Blue,            //[54]\n                    msg.payload.SLD_w_Threshold_White_Red,           //[55]\n                    \n                    //Pushout Counter\n                    //SLD\n                    msg.payload.SLD_i_CounterValue_Blue,         //[56]\n                    msg.payload.SLD_i_CounterValue_Red,          //[57]\n                    msg.payload.SLD_i_CounterValue_White,        //[58]\n\n                    ];\nreturn msg;\n\n\n",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 140,
@@ -8800,7 +8800,7 @@
 		"z": "881fbb6.2d64cc8",
 		"group": "8cacc4a1.8c2a2",
 		"name": "Status Picture VGR",
-		"order": 2,
+		"order": 3,
 		"width": 9,
 		"height": 7,
 		"format": "\n<!--<div style=\"background: url(http://192.168.0.5:1880/images/VGR_1.png) center/contain no-repeat; height: 400px; position: relative\"> -->\n<div style=\"background: {{msg.url}}; height: 400px; position: relative\">\n<!-- <iframe style=\"width:480px; height:480px;\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"http://127.0.0.1:1880/AS1_8_1_Detail.png\"></iframe> -->\n    <div ng-repeat=\"el in msg.payload\" style=\"left: {{el.left}}px; position: absolute; top: {{el.top}}px;\">\n        <ng-md-icon icon=\"{{el.icon}}\" size=\"20\" style=\"border-radius: 0%; border: 0px solid {{el.color}}; fill: {{el.color}}; padding: 3px 0px 0px 3px;\"></ng-md-icon>\n        \n        <span style=\"color: {{el.color}}; font-size: 14px; font-weight: bold; margin-top: 3px; margin-left: 2px; text-align: right;\">\n            {{el.text}}\n        </span>\n    </div>\n</div>\n\n\n\n",
@@ -14856,6 +14856,16 @@
 				"name": "",
 				"nodeId": "ns=3;s=\"gtyp_Setup\".\"di_Pos_Rotate\"",
 				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_Setup\".\"i_Pos_Selection\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_Setup\".\"x_Set_Pos_Activ\"",
+				"datatypeName": ""
 			}
 		],
 		"x": 110,
@@ -14883,7 +14893,8 @@
 		"y": 420,
 		"wires": [
 			[
-				"2a981b73.7cdfec"
+				"2a981b73.7cdfec",
+				"8a93ef88.964df"
 			]
 		]
 	},
@@ -17885,7 +17896,7 @@
 		"type": "ui_text",
 		"z": "b495b31e.fe8338",
 		"group": "2f117237.36aff6",
-		"order": 15,
+		"order": 12,
 		"width": 3,
 		"height": 1,
 		"name": "",
@@ -17902,7 +17913,7 @@
 		"z": "b495b31e.fe8338",
 		"name": "",
 		"group": "2f117237.36aff6",
-		"order": 17,
+		"order": 14,
 		"width": 2,
 		"height": 1,
 		"passthru": false,
@@ -17969,99 +17980,6 @@
 		"filters": [],
 		"x": 1030,
 		"y": 580,
-		"wires": [
-			[]
-		]
-	},
-	{
-		"id": "f9fc48e4.9a3b68",
-		"type": "ui_text",
-		"z": "b495b31e.fe8338",
-		"group": "2f117237.36aff6",
-		"order": 12,
-		"width": 3,
-		"height": 1,
-		"name": "",
-		"label": "Start offset:",
-		"format": "",
-		"layout": "row-spread",
-		"x": 130,
-		"y": 640,
-		"wires": []
-	},
-	{
-		"id": "974adc30.c65b18",
-		"type": "ui_button",
-		"z": "b495b31e.fe8338",
-		"name": "",
-		"group": "2f117237.36aff6",
-		"order": 14,
-		"width": 2,
-		"height": 1,
-		"passthru": false,
-		"label": "OFFSET",
-		"tooltip": "",
-		"color": "",
-		"bgcolor": "",
-		"icon": "done",
-		"payload": "true",
-		"payloadType": "bool",
-		"topic": "Signal2",
-		"x": 340,
-		"y": 640,
-		"wires": [
-			[
-				"7015f25.bb3f58c"
-			]
-		]
-	},
-	{
-		"id": "7015f25.bb3f58c",
-		"type": "function",
-		"z": "b495b31e.fe8338",
-		"name": "declare values",
-		"func": "//var ts = new Date().toISOString();\nvar wert = msg.payload\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"write\";\n\nmsg.addressSpaceItems = [\n        {\"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Start_Offset\"',\n        \"datatypeName\":'Boolean'},\n        ]\n\n//msg.payload[\"ts\"] = ts;\nmsg.valuesToWrite = [wert];\n\nreturn msg;\n\n\n",
-		"outputs": 1,
-		"noerr": 0,
-		"x": 680,
-		"y": 640,
-		"wires": [
-			[
-				"674ed7e9.51898"
-			]
-		]
-	},
-	{
-		"id": "674ed7e9.51898",
-		"type": "OPCUA-IIoT-Write",
-		"z": "b495b31e.fe8338",
-		"connector": "74a7d84.2350d28",
-		"name": "",
-		"justValue": true,
-		"showStatusActivities": false,
-		"showErrors": true,
-		"x": 870,
-		"y": 640,
-		"wires": [
-			[
-				"d166f9ba.ad6c08"
-			]
-		]
-	},
-	{
-		"id": "d166f9ba.ad6c08",
-		"type": "OPCUA-IIoT-Response",
-		"z": "b495b31e.fe8338",
-		"name": "",
-		"compressStructure": false,
-		"showStatusActivities": false,
-		"showErrors": false,
-		"activateUnsetFilter": false,
-		"activateFilters": false,
-		"negateFilter": false,
-		"filters": [],
-		"x": 1030,
-		"y": 640,
 		"wires": [
 			[]
 		]
@@ -20047,7 +19965,7 @@
 		"type": "debug",
 		"z": "4c072751.507d3",
 		"name": "MQTT Local in",
-		"active": true,
+		"active": false,
 		"tosidebar": true,
 		"console": false,
 		"tostatus": false,

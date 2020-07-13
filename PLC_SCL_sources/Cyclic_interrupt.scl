@@ -179,7 +179,6 @@ TITLE = Global DB SSC
 { S7_Optimized_Access := 'TRUE' }
 AUTHOR : 'A.Schaefer'
 VERSION : 0.0
-NON_RETAIN
 "typ_SSC"
 
 BEGIN
@@ -338,7 +337,6 @@ TITLE = Global DB VGR
 { S7_Optimized_Access := 'TRUE' }
 AUTHOR : 'A.Schaefer'
 VERSION : 0.0
-NON_RETAIN
 "typ_VGR"
 
 BEGIN
@@ -363,6 +361,7 @@ BEGIN
    di_Pos_DSI_rotate := 30;
    di_Pos_DSO_horizontal := 2070;
    di_Pos_DSO_Discard_vertical := 1480;
+   di_Offset_Pos_DSO_vertical := 500;
    di_Pos_DSO_rotate := 970;
    di_Pos_Color_horizontal := 150;
    di_Pos_Color_vertical := 2450;
@@ -378,7 +377,7 @@ BEGIN
    di_Offset_Pos_HBW_horizontal := 0;
    di_Pos_HBW_Collect_vertical := 650;
    di_Pos_HBW_Discard_vertical := 200;
-   di_Offset_Pos_HBW_vertical := 0;
+   di_Offset_Pos_HBW_vertical := 100;
    di_Pos_HBW_rotate := 5350;
    di_Pos_NiO_horizontal := 0;
    di_Pos_NiO_vertical := 2700;

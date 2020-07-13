@@ -1124,7 +1124,6 @@ TITLE = Global DB VGR
 { S7_Optimized_Access := 'TRUE' }
 AUTHOR : 'A.Schaefer'
 VERSION : 0.0
-NON_RETAIN
 "typ_VGR"
 
 BEGIN
@@ -1149,6 +1148,7 @@ BEGIN
    di_Pos_DSI_rotate := 30;
    di_Pos_DSO_horizontal := 2070;
    di_Pos_DSO_Discard_vertical := 1480;
+   di_Offset_Pos_DSO_vertical := 500;
    di_Pos_DSO_rotate := 970;
    di_Pos_Color_horizontal := 150;
    di_Pos_Color_vertical := 2450;
@@ -1164,7 +1164,7 @@ BEGIN
    di_Offset_Pos_HBW_horizontal := 0;
    di_Pos_HBW_Collect_vertical := 650;
    di_Pos_HBW_Discard_vertical := 200;
-   di_Offset_Pos_HBW_vertical := 0;
+   di_Offset_Pos_HBW_vertical := 100;
    di_Pos_HBW_rotate := 5350;
    di_Pos_NiO_horizontal := 0;
    di_Pos_NiO_vertical := 2700;
@@ -1203,7 +1203,6 @@ TITLE = Global DB SSC
 { S7_Optimized_Access := 'TRUE' }
 AUTHOR : 'A.Schaefer'
 VERSION : 0.0
-NON_RETAIN
 "typ_SSC"
 
 BEGIN
@@ -1326,7 +1325,9 @@ BEGIN
 	    
 	    //  Deciding which state
 	    //  Setup - Calibration State
-	    IF "gtyp_Setup".x_Set_Pos_Activ OR "gtyp_Setup".x_Clean_Rack_HBW THEN
+	    IF "gtyp_Setup".x_Set_Pos_Activ OR "gtyp_Setup".x_Color_Sensor_Calibration
+	                                    OR "gtyp_Setup".x_Counter_Value_Calibration
+	                                    OR "gtyp_Setup".x_Clean_Rack_HBW THEN
 	        "QX_SSC_LED_Green_Q5"  := #lfb_blinker_config.outx_blinker;
 	        "QX_SSC_LED_Yellow_Q6" := #lfb_blinker_config.outx_blinker;
 	        "QX_SSC_LED_Red_Q7"    := #lfb_blinker_config.outx_blinker;
@@ -2974,6 +2975,20 @@ BEGIN
 	        "gtyp_VGR".History[#li_Counter].ldt_ts := DT#1990-01-01-00:00:00;
 	    END_FOR;
 	    
+	    "gtyp_VGR".x_NFC_Start_First    := FALSE;
+	    "gtyp_VGR".x_NFC_Start          := FALSE;
+	    "gtyp_VGR".x_NFC_Completed      := FALSE;
+	    "gtyp_VGR".x_HBW_Storage        := FALSE;
+	    "gtyp_VGR".x_HBW_Outsource      := FALSE;
+	    "gtyp_VGR".s_HBW_Outsource_Typ  := '';
+	    "gtyp_VGR".x_HBW_Discards       := FALSE;
+	    "gtyp_VGR".x_HBW_PickedUp       := FALSE;
+	    "gtyp_VGR".x_MPO_Req_Discard    := FALSE;
+	    "gtyp_VGR".x_MPO_Discards        := FALSE;
+	    "gtyp_VGR".x_Ready_For_Outsource := FALSE;
+	    "gtyp_VGR".x_State_Process       := FALSE;
+	    "gtyp_VGR".x_Workpiece_NiO       := FALSE;
+	    
 	    #li_Lights := 1;
 	    #lx_Init := TRUE;
 	END_IF;
@@ -2988,6 +3003,7 @@ VERSION : 0.0
       lx_Init { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lx_Start_TON_Wait { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lx_Start_Positioning_m { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      lx_Start_FinalPositioning_m { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lx_Start_TON_State { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lt_TON_Wait { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Time;
       ldt_MQTT { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Date_And_Time;
@@ -3040,7 +3056,102 @@ BEGIN
 	        END_IF;
 	    END_IF;
 	    
-	    // step chain HBW
+	    // Set Positioning activ?
+	    IF "gtyp_Setup".x_Set_Pos_Activ
+	        AND (("gtyp_Setup".i_Pos_Selection > 40)
+	        AND ("gtyp_Setup".i_Pos_Selection < 61))
+	        AND ((#li_StepCase = 80)
+	        OR (#li_StepCase = 120)
+	        OR (#li_StepCase = 140)) THEN
+	        
+	        // Deciding which Position
+	        // Position - Color 
+	        IF "gtyp_Setup".i_Pos_Selection = 41 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_Color_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_Color_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_Color_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
+	            // Position - DSI Collect
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 42 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSI_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSI_Collect_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSI_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
+	            // Position - DSI Discard 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 43 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSI_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSI_Discard_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSI_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
+	            // Position - DSO Collect 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 44 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSO_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSO_Collect_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSO_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSO_vertical;
+	            // Position - DSO Discard 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 45 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSO_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSO_Discard_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSO_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSO_vertical;
+	            // Position - HBW Collect 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 46 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_HBW_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_HBW_Collect_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_HBW_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_HBW_vertical;
+	            // Position - HBW Discard 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 47 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_HBW_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_HBW_Discard_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_HBW_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_HBW_vertical;
+	            // Position - MPO 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 48 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_MPO_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_MPO_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_MPO_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_MPO_vertical;
+	            // Position - NFC 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 49 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_NFC_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_NFC_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_NFC_rotate;
+	            #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
+	            // Position - NiO 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 50 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_NiO_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_NiO_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_NiO_rotate;
+	            #ldi_Offset_Vertical := 500;
+	            // Position - SLD Blue 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 51 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_Blue_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_Blue_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_Blue_rotate;
+	            #ldi_Offset_Vertical := 500;
+	            // Position - SLD Red 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 52 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_Red_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_Red_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_Red_rotate;
+	            #ldi_Offset_Vertical := 500;
+	            // Position - SLD White 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 53 THEN
+	            #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_White_horizontal;
+	            #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_White_vertical;
+	            #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_White_rotate;
+	            #ldi_Offset_Vertical := 500;
+	        END_IF;
+	    END_IF;
+	    
+	    // Set Positioning activ?
+	    IF NOT "gtyp_Setup".x_Set_Pos_Activ THEN
+	        "gtyp_Setup".i_Pos_Selection := 0;
+	    END_IF;
+	        
+	        // step chain HBW
 	    CASE #li_StepCase OF
 	            
 	        0:  // init
@@ -3051,82 +3162,6 @@ BEGIN
 	            IF "gtyp_Setup".x_Set_Pos_Activ
 	                AND (("gtyp_Setup".i_Pos_Selection > 40)
 	                AND ("gtyp_Setup".i_Pos_Selection < 61)) THEN
-	                // Deciding which Position
-	                // Position - Color 
-	                IF "gtyp_Setup".i_Pos_Selection = 41 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_Color_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_Color_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_Color_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
-	                    // Position - DSI Collect
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 42 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSI_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSI_Collect_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSI_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
-	                    // Position - DSI Discard 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 43 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSI_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSI_Discard_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSI_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
-	                    // Position - DSO Collect 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 44 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSO_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSO_Collect_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSO_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSO_vertical;
-	                    // Position - DSO Discard 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 45 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_DSO_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_DSO_Discard_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_DSO_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSO_vertical;
-	                    // Position - HBW Collect 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 46 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_HBW_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_HBW_Collect_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_HBW_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_HBW_vertical;
-	                    // Position - HBW Discard 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 47 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_HBW_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_HBW_Discard_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_HBW_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_HBW_vertical;
-	                    // Position - MPO 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 48 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_MPO_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_MPO_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_MPO_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_MPO_vertical;
-	                    // Position - NFC 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 49 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_NFC_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_NFC_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_NFC_rotate;
-	                    #ldi_Offset_Vertical := "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
-	                    // Position - NiO 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 50 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_NiO_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_NiO_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_NiO_rotate;
-	                    // Position - SLD Blue 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 51 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_Blue_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_Blue_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_Blue_rotate;
-	                    // Position - SLD Red 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 52 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_Red_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_Red_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_Red_rotate;
-	                    // Position - SLD White 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 53 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_VGR".di_Pos_SLD_White_horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_VGR".di_Pos_SLD_White_vertical;
-	                    #ldi_Pos_Rotate := "gtyp_VGR".di_Pos_SLD_White_rotate;
-	                END_IF;
 	                
 	                "gtyp_VGR".horizontal_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
@@ -3181,7 +3216,7 @@ BEGIN
 	            END_IF;
 	            
 	        80:  // Start Positioning Step next
-	            IF "gtyp_Setup".x_Start_Positioning OR #lx_Start_Positioning_m THEN
+	            IF "gtyp_Setup".x_Start_Positioning OR #lx_Start_Positioning_m OR #lx_Start_FinalPositioning_m THEN
 	                #lx_Start_Positioning_m := FALSE;
 	                #li_StepCase := 90;
 	            END_IF;
@@ -3223,14 +3258,15 @@ BEGIN
 	        120: // Deciding which doing
 	            
 	            // Start new Positioning
-	            IF "gtyp_Setup".x_Start_Positioning OR "gtyp_Setup".x_Home_Positioning THEN
+	            IF "gtyp_Setup".x_Start_Positioning THEN
 	                #lx_Start_Positioning_m := TRUE;
 	                #li_StepCase := 10;
 	                // Start Final Positioning
-	            ELSIF "gtyp_Setup".x_Final_Positioning THEN
+	            ELSIF "gtyp_Setup".x_Final_Positioning OR #lx_Start_FinalPositioning_m THEN
+	                #lx_Start_FinalPositioning_m := FALSE;
 	                #li_StepCase := 130;
 	                // Deaktivate Set Positioning
-	            ELSIF #lfb_R_Trig_Deaktivate.Q THEN
+	            ELSIF #lfb_R_Trig_Deaktivate.Q OR "gtyp_Setup".x_Home_Positioning THEN
 	                "gtyp_Setup".x_Home_Positioning := FALSE;
 	                #li_StepCase := 150;
 	            END_IF;
@@ -3243,20 +3279,22 @@ BEGIN
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= (#ldi_Pos_Vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
-	                "gtyp_Setup".x_Start_Positioning := FALSE;
+	                "gtyp_Setup".x_Final_Positioning := FALSE;
 	                #li_StepCase := 140;
 	            END_IF;
 	            
 	        140: // Deciding which doing
 	            
 	            // Start new Positioning
-	            IF "gtyp_Setup".x_Start_Positioning OR "gtyp_Setup".x_Home_Positioning THEN
+	            IF "gtyp_Setup".x_Start_Positioning THEN
+	                #lx_Start_Positioning_m := TRUE;
 	                #li_StepCase := 10;
 	                // Start Final Positioning
 	            ELSIF "gtyp_Setup".x_Final_Positioning THEN
+	                #lx_Start_FinalPositioning_m := TRUE;
 	                #li_StepCase := 10;
-	                // Deaktivate Set Positioning
-	            ELSIF #lfb_R_Trig_Deaktivate.Q THEN
+	                // Start Final Positioning
+	            ELSIF #lfb_R_Trig_Deaktivate.Q OR "gtyp_Setup".x_Home_Positioning THEN
 	                "gtyp_Setup".x_Home_Positioning := FALSE;
 	                #li_StepCase := 150;
 	            END_IF;
@@ -3348,6 +3386,30 @@ BEGIN
 	        END_IF;
 	    END_IF;
 	    
+	    // Set Positioning activ?
+	    IF "gtyp_Setup".x_Set_Pos_Activ
+	        AND (("gtyp_Setup".i_Pos_Selection > 0)
+	        AND ("gtyp_Setup".i_Pos_Selection < 21))
+	        AND ((#li_StepCase = 40)
+	        OR (#li_StepCase = 60)) THEN
+	        
+	        // Deciding which Position
+	        // Position - Centre
+	        IF "gtyp_Setup".i_Pos_Selection = 1 THEN
+	            #ldi_Pos_Horizontal := "gtyp_SSC".di_Pos_Centre_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_SSC".di_Pos_Centre_Vertical;
+	            // Position - HBW 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 2 THEN
+	            #ldi_Pos_Horizontal := "gtyp_SSC".di_Pos_HBW_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_SSC".di_Pos_HBW_Vertical;
+	        END_IF;
+	    END_IF;
+	    
+	    // Set Positioning activ?
+	    IF NOT "gtyp_Setup".x_Set_Pos_Activ THEN
+	        "gtyp_Setup".i_Pos_Selection := 0;
+	    END_IF;
+	        
 	    // step chain HBW
 	    CASE #li_StepCase OF
 	            
@@ -3359,18 +3421,6 @@ BEGIN
 	            IF "gtyp_Setup".x_Set_Pos_Activ
 	                AND (("gtyp_Setup".i_Pos_Selection > 0)
 	                AND ("gtyp_Setup".i_Pos_Selection < 21)) THEN
-	                
-	                // Deciding which Position
-	                // Position - Centre
-	                IF "gtyp_Setup".i_Pos_Selection = 1 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_SSC".di_Pos_Centre_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_SSC".di_Pos_Centre_Vertical;
-	                    // Position - HBW 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 2 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_SSC".di_Pos_HBW_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_SSC".di_Pos_HBW_Vertical;
-	                END_IF;
-	                
 	                "gtyp_SSC".Horizontal_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_SSC".Vertical_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_SSC".Horizontal_Axis.x_Reference := FALSE;
@@ -4463,6 +4513,12 @@ BEGIN
 	        END_FOR;
 	    END_FOR;
 	    
+	    "gtyp_HBW".x_HBW_PickedUp_Accepted := FALSE;
+	    "gtyp_HBW".x_HBW_Discards_Accepted := FALSE;
+	    "gtyp_HBW".x_HBW_PickUp_Ready := FALSE;
+	    "gtyp_HBW".x_HBW_Container_Available := FALSE;
+	    "gtyp_HBW".x_Error := FALSE;
+	    
 	    #li_Lights := 1;
 	    #lx_Init := TRUE;
 	END_IF;
@@ -4809,6 +4865,7 @@ BEGIN
 	    END_CASE;
 	 
 	ELSE
+	    "gtyp_SLD".x_Error := FALSE;
 	    #li_Lights := 1;
 	    #lx_Init := TRUE;
 	END_IF;
@@ -4859,6 +4916,8 @@ VERSION : 0.0
       lx_Init { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lx_Start_TON_Wait { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lx_Start_Positioning_m { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      lx_Start_FinalPositioning_m { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      lx_Start_Offset_m { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
       lt_TON_Wait { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Time;
       li_Counter_Hor { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;
       li_Counter_Ver { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;
@@ -4901,6 +4960,44 @@ BEGIN
 	        END_IF;
 	    END_IF;
 	    
+	    // Set Positioning activ?
+	    IF "gtyp_Setup".x_Set_Pos_Activ
+	        AND (("gtyp_Setup".i_Pos_Selection > 20)
+	        AND ("gtyp_Setup".i_Pos_Selection < 41))
+	        AND ((#li_StepCase = 40)
+	        OR (#li_StepCase = 60)
+	        OR (#li_StepCase = 80)
+	        OR (#li_StepCase = 100)) THEN
+	        
+	        // Deciding which Position
+	        // Position - Belt
+	        IF "gtyp_Setup".i_Pos_Selection = 21 THEN
+	            #ldi_Pos_Horizontal := "gtyp_HBW".di_PosBelt_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_HBW".di_PosBelt_Vertical;
+	            #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Belt_Vertical;
+	            // Position - A1 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 22 THEN
+	            #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_A1_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_A1_Vertical;
+	            #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
+	            // Position - B2 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 23 THEN
+	            #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_B2_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_B2_Vertical;
+	            #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
+	            // Position - C3 
+	        ELSIF "gtyp_Setup".i_Pos_Selection = 24 THEN
+	            #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_C3_Horizontal;
+	            #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_C3_Vertical;
+	            #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
+	        END_IF;
+	    END_IF;
+	    
+	    // Set Positioning activ?
+	    IF NOT "gtyp_Setup".x_Set_Pos_Activ THEN
+	        "gtyp_Setup".i_Pos_Selection := 0;
+	    END_IF;
+	    
 	    // step chain HBW
 	    CASE #li_StepCase OF
 	            
@@ -4912,29 +5009,6 @@ BEGIN
 	            IF "gtyp_Setup".x_Set_Pos_Activ
 	                AND (("gtyp_Setup".i_Pos_Selection > 20)
 	                AND ("gtyp_Setup".i_Pos_Selection < 41)) THEN
-	                
-	                // Deciding which Position
-	                // Position - Belt
-	                IF "gtyp_Setup".i_Pos_Selection = 21 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_HBW".di_PosBelt_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_HBW".di_PosBelt_Vertical;
-	                    #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Belt_Vertical;
-	                    // Position - A1 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 22 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_A1_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_A1_Vertical;
-	                    #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
-	                    // Position - B2 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 23 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_B2_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_B2_Vertical;
-	                    #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
-	                    // Position - C3 
-	                ELSIF "gtyp_Setup".i_Pos_Selection = 24 THEN
-	                    #ldi_Pos_Horizontal := "gtyp_HBW".di_PosRack_C3_Horizontal;
-	                    #ldi_Pos_Vertical := "gtyp_HBW".di_PosRack_C3_Vertical;
-	                    #ldi_Offset_Vertical := "gtyp_HBW".di_Offset_Pos_Rack_Vertical;
-	                END_IF;
 	                
 	                "gtyp_HBW".Horizontal_Axis.x_Start_Positioning  := FALSE;
 	                "gtyp_HBW".Vertical_Axis.x_Start_Positioning    := FALSE;
@@ -4973,7 +5047,7 @@ BEGIN
 	            END_IF;
 	            
 	        40: // Start Positioning Step next
-	            IF "gtyp_Setup".x_Start_Positioning OR #lx_Start_Positioning_m THEN
+	            IF "gtyp_Setup".x_Start_Positioning OR #lx_Start_Positioning_m OR #lx_Start_FinalPositioning_m OR #lx_Start_Offset_m THEN
 	                #lx_Start_Positioning_m := FALSE;
 	                #li_StepCase := 50;
 	            END_IF;
@@ -5015,7 +5089,8 @@ BEGIN
 	                #lx_Start_Positioning_m := TRUE;
 	                #li_StepCase := 10;
 	            // Start Final Positioning
-	            ELSIF "gtyp_Setup".x_Final_Positioning THEN
+	            ELSIF "gtyp_Setup".x_Final_Positioning OR #lx_Start_FinalPositioning_m OR #lx_Start_Offset_m THEN
+	                #lx_Start_FinalPositioning_m := FALSE;
 	                #li_StepCase := 70;
 	            // Deaktivate Set Positioning
 	            ELSIF #lfb_R_Trig_Deaktivate.Q OR "gtyp_Setup".x_Home_Positioning THEN
@@ -5043,9 +5118,11 @@ BEGIN
 	                #li_StepCase := 110;
 	                // Start Final Positioning
 	            ELSIF "gtyp_Setup".x_Final_Positioning THEN
-	                #li_StepCase := 70;
+	                #lx_Start_FinalPositioning_m := TRUE;
+	                #li_StepCase := 110;
 	                // Start Final Positioning
-	            ELSIF "gtyp_Setup".x_Start_Offset THEN
+	            ELSIF "gtyp_Setup".x_Start_Offset OR #lx_Start_Offset_m THEN
+	                #lx_Start_Offset_m := FALSE;
 	                #li_StepCase := 90;
 	                // Deaktivate Set Positioning
 	            ELSIF #lfb_R_Trig_Deaktivate.Q OR "gtyp_Setup".x_Home_Positioning THEN
@@ -5073,10 +5150,11 @@ BEGIN
 	                #li_StepCase := 110;
 	                // Start Final Positioning
 	            ELSIF "gtyp_Setup".x_Final_Positioning THEN
-	                #lx_Start_Positioning_m := TRUE;
+	                #lx_Start_FinalPositioning_m := TRUE;
 	                #li_StepCase := 110;
 	                // Start Final Positioning
 	            ELSIF "gtyp_Setup".x_Start_Offset THEN
+	                #lx_Start_Offset_m := true;
 	                #li_StepCase := 110;
 	                // Deaktivate Set Positioning
 	            ELSIF #lfb_R_Trig_Deaktivate.Q OR "gtyp_Setup".x_Home_Positioning THEN
@@ -6148,6 +6226,8 @@ BEGIN
 	ELSE
 	    #lx_Init := TRUE;
 	    #lx_FirstCentre := TRUE;
+	    
+	    "gtyp_SSC".x_Error := FALSE;
 	END_IF;
 END_FUNCTION_BLOCK
 
