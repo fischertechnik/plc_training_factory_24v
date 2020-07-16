@@ -1,1 +1,7 @@
+Node-RED/* -linguist-vendored
+PLC_S7_1500/* linguist-vendored
+PLC_S7_1500_exercises/* linguist-vendored
 PLC_SCL_sources/* linguist-vendored
+
+*.scl linguist-language=SCL
+
