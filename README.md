@@ -1,7 +1,7 @@
 > If you have any questions, please contact fischertechnik-technik@fischer.de
 
 # fischertechnik Training Factory Industry 4.0 24V (en)
-This project contains the PLC programs, the IOT gateway SD card image with Node-RED flows and the TXT gateway C program for the fischertechnik [**Training Factory Industry 4.0 24V**](https://www.fischertechnik.de/en/products/simulating/training-models/554868-sim-training-factory-industry-4-0-24v-simulation).
+This project contains the PLC programs, the IOT gateway SD card image with [Node-RED](https://nodered.org/) flows and the TXT gateway C program for the fischertechnik [**Training Factory Industry 4.0 24V**](https://www.fischertechnik.de/en/products/simulating/training-models/554868-sim-training-factory-industry-4-0-24v-simulation).
 
 | Folder | Content |
 | --- | --- |
