@@ -4,4 +4,4 @@ PLC_S7_1500_exercises/* linguist-vendored
 PLC_SCL_sources/* linguist-vendored
 
 *.scl linguist-language=SCL
-
+*.zap16 linguist-language=TIA Portal V16
