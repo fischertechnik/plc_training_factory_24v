@@ -65,6 +65,8 @@ END_TYPE
 TYPE "typ_VGR"
 VERSION : 0.1
    STRUCT
+      x_Start_Park_Position : Bool;
+      x_Park_Position_Reached : Bool;
       x_NFC_Start_First : Bool;
       x_NFC_Start : Bool;
       x_NFC_Completed : Bool;
@@ -121,6 +123,9 @@ VERSION : 0.1
       di_Pos_SLD_White_horizontal : DInt;
       di_Pos_SLD_White_vertical : DInt;
       di_Pos_SLD_White_rotate : DInt;
+      di_Pos_Park_horizontal : DInt;
+      di_Pos_Park_vertical : DInt;
+      di_Pos_Park_rotate : DInt;
    END_STRUCT;
 
 END_TYPE
@@ -128,11 +133,15 @@ END_TYPE
 TYPE "typ_SSC"
 VERSION : 0.1
    STRUCT
+      x_Start_Park_Position : Bool;
+      x_Park_Position_Reached : Bool;
       x_Error : Bool;
       di_Pos_Centre_Horizontal : DInt;
       di_Pos_Centre_Vertical : DInt;
       di_Pos_HBW_Horizontal : DInt;
       di_Pos_HBW_Vertical : DInt;
+      di_Pos_Park_Horizontal : DInt;
+      di_Pos_Park_Vertical : DInt;
       w_Threshold_White_Red : Word;
       w_Threshold_Red_Blue : Word;
       Horizontal_Axis { S7_SetPoint := 'False'} : "typ_Axis";
@@ -146,6 +155,8 @@ END_TYPE
 TYPE "typ_HBW"
 VERSION : 0.1
    STRUCT
+      x_Start_Park_Position : Bool;
+      x_Park_Position_Reached : Bool;
       x_HBW_PickedUp_Accepted : Bool;
       x_HBW_Discards_Accepted : Bool;
       x_HBW_PickUp_Ready : Bool;
@@ -161,6 +172,8 @@ VERSION : 0.1
       di_PosRack_C3_Horizontal : DInt;
       di_PosRack_C3_Vertical : DInt;
       di_Offset_Pos_Rack_Vertical : DInt;
+      di_Pos_Park_Horizontal : DInt;
+      di_Pos_Park_Vertical : DInt;
       i_PWM_ConveyorBelt : Int := 800;
       i_PWM_Cantilever : Int := 800;
       Workpiece { S7_SetPoint := 'False'} : "typ_Workpiece";
@@ -186,6 +199,8 @@ BEGIN
    di_Pos_Centre_Vertical := 1400;
    di_Pos_HBW_Horizontal := 5400;
    di_Pos_HBW_Vertical := 950;
+   di_Pos_Park_Horizontal := 3000;
+   di_Pos_Park_Vertical := 200;
    w_Threshold_White_Red := 16#25DA;
    w_Threshold_Red_Blue := 16#3C57;
    Horizontal_Axis.i_PWM := 1000;
@@ -221,6 +236,8 @@ BEGIN
    di_PosRack_C3_Horizontal := 7560;
    di_PosRack_C3_Vertical := 3250;
    di_Offset_Pos_Rack_Vertical := 370;
+   di_Pos_Park_Horizontal := 600;
+   di_Pos_Park_Vertical := 3200;
    i_PWM_Cantilever := 1000;
    Rack_Pos[1,1].di_PosRack_Horizontal := 2870;
    Rack_Pos[1,1].di_PosRack_Vertical := 400;
@@ -345,7 +362,7 @@ BEGIN
    horizontal_Axis.Config.di_Neg_Soft_Switch := 0;
    horizontal_Axis.Config.di_Ref_Pos := 0;
    horizontal_Axis.Config.di_Loop_Value := 0;
-   vertical_Axis.i_PWM := 500;
+   vertical_Axis.i_PWM := 800;
    vertical_Axis.Config.di_Pos_Soft_Switch := 20000;
    vertical_Axis.Config.di_Neg_Soft_Switch := 0;
    vertical_Axis.Config.di_Ref_Pos := 0;
@@ -391,6 +408,9 @@ BEGIN
    di_Pos_SLD_White_horizontal := 1370;
    di_Pos_SLD_White_vertical := 3100;
    di_Pos_SLD_White_rotate := 1770;
+   di_Pos_Park_horizontal := 150;
+   di_Pos_Park_vertical := 3000;
+   di_Pos_Park_rotate := 1750;
 
 END_DATA_BLOCK
 

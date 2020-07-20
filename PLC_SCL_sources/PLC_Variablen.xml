@@ -101,4 +101,5 @@
   <Tag type='Int' hmiVisible='False' hmiWriteable='False' hmiAccessible='False' retain='False' remark='HBW  = PWM Motor M4 cantilever' addr='%QW13'>QW_HBW_PWM_Cantilever_M4</Tag>
   <Tag type='Int' hmiVisible='False' hmiWriteable='False' hmiAccessible='False' retain='False' remark='MPO = PWM Motor M1 turn-table' addr='%QW23'>QW_MPO_PWM_TurnTable_M1</Tag>
   <Tag type='Int' hmiVisible='False' hmiWriteable='False' hmiAccessible='False' retain='False' remark='MPO = PWM Motor M5 turn-table' addr='%QW25'>QW_MPO_PWM_Vacuum_M5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' retain='False' remark='' addr='%I4.7'>IX_Set_Park_Position</Tag>
 </Tagtable>

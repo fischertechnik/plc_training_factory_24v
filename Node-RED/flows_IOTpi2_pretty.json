@@ -1018,10 +1018,10 @@
 		"z": "",
 		"name": "Color sensor calibration",
 		"tab": "8600dc5f.358488",
-		"order": 2,
+		"order": 1,
 		"disp": true,
 		"width": "9",
-		"collapse": true
+		"collapse": false
 	},
 	{
 		"id": "9a003a94.59357",
@@ -1029,10 +1029,10 @@
 		"z": "",
 		"name": "SLD push out counter",
 		"tab": "8600dc5f.358488",
-		"order": 3,
+		"order": 4,
 		"disp": true,
 		"width": "9",
-		"collapse": true
+		"collapse": false
 	},
 	{
 		"id": "1e4a1f68.4051f1",
@@ -1139,42 +1139,6 @@
 		"height": 1
 	},
 	{
-		"id": "204d9775.013ef8",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "4dd8e20b.5429ac",
-		"order": 3,
-		"width": 9,
-		"height": 1
-	},
-	{
-		"id": "d4d09a1b.af0e38",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "4dd8e20b.5429ac",
-		"order": 12,
-		"width": 9,
-		"height": 1
-	},
-	{
-		"id": "f522b723.a3425",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "4dd8e20b.5429ac",
-		"order": 16,
-		"width": 1,
-		"height": 1
-	},
-	{
-		"id": "feaf73f.11bd19",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "9a003a94.59357",
-		"order": 6,
-		"width": 1,
-		"height": 1
-	},
-	{
 		"id": "82956c45.28a928",
 		"type": "ui_group",
 		"z": "",
@@ -1184,42 +1148,6 @@
 		"disp": true,
 		"width": 10,
 		"collapse": false
-	},
-	{
-		"id": "ba673a61.c513c8",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "c863b9e5.ef9b6",
-		"order": 2,
-		"width": 2,
-		"height": 1
-	},
-	{
-		"id": "c3f726f5.f6cd78",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "c863b9e5.ef9b6",
-		"order": 5,
-		"width": 2,
-		"height": 1
-	},
-	{
-		"id": "39d20017.924018",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "c863b9e5.ef9b6",
-		"order": 8,
-		"width": 2,
-		"height": 1
-	},
-	{
-		"id": "7f6177b6.e28bf",
-		"type": "ui_spacer",
-		"name": "spacer",
-		"group": "82956c45.28a928",
-		"order": 1,
-		"width": 1,
-		"height": 1
 	},
 	{
 		"id": "88a35404.8a459",
@@ -1327,6 +1255,129 @@
 		"group": "afaa8b63.c29268",
 		"order": 8,
 		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "d3cb8795.3073d8",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "c863b9e5.ef9b6",
+		"order": 2,
+		"width": 2,
+		"height": 1
+	},
+	{
+		"id": "43935e25.9bb118",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "c863b9e5.ef9b6",
+		"order": 5,
+		"width": 2,
+		"height": 1
+	},
+	{
+		"id": "28d8cd66.1d69da",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "c863b9e5.ef9b6",
+		"order": 8,
+		"width": 2,
+		"height": 1
+	},
+	{
+		"id": "f72f373c.68d22",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "c863b9e5.ef9b6",
+		"order": 10,
+		"width": 10,
+		"height": 1
+	},
+	{
+		"id": "1e63003e.cebeb",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "c863b9e5.ef9b6",
+		"order": 12,
+		"width": 2,
+		"height": 1
+	},
+	{
+		"id": "c4b8eb16.cb1bd",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "82956c45.28a928",
+		"order": 1,
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "6144f93c.58106",
+		"type": "ui_group",
+		"z": "",
+		"name": "Color Sensor DSI - act. values",
+		"tab": "8600dc5f.358488",
+		"order": 2,
+		"disp": true,
+		"width": "9",
+		"collapse": true
+	},
+	{
+		"id": "4e1ad0e2.f207f8",
+		"type": "ui_group",
+		"z": "",
+		"name": "Color Sensor SLD - act. values",
+		"tab": "8600dc5f.358488",
+		"order": 3,
+		"disp": true,
+		"width": "9",
+		"collapse": true
+	},
+	{
+		"id": "68fd9c4b.55b26c",
+		"type": "ui_group",
+		"z": "",
+		"name": "SLD push out counter - act. values",
+		"tab": "8600dc5f.358488",
+		"order": 5,
+		"disp": true,
+		"width": "9",
+		"collapse": true
+	},
+	{
+		"id": "b5c5ebab.615a7",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "4dd8e20b.5429ac",
+		"order": 3,
+		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "2cd7a91b.c1a89e",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "4dd8e20b.5429ac",
+		"order": 12,
+		"width": 9,
+		"height": 1
+	},
+	{
+		"id": "876675e2.785508",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "4dd8e20b.5429ac",
+		"order": 16,
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "6c864306.f79934",
+		"type": "ui_spacer",
+		"name": "spacer",
+		"group": "9a003a94.59357",
+		"order": 6,
+		"width": 1,
 		"height": 1
 	},
 	{
@@ -16373,7 +16424,7 @@
 		"format": "",
 		"layout": "row-spread",
 		"x": 160,
-		"y": 540,
+		"y": 760,
 		"wires": []
 	},
 	{
@@ -16395,7 +16446,7 @@
 		"payloadType": "bool",
 		"topic": "Signal1",
 		"x": 330,
-		"y": 540,
+		"y": 760,
 		"wires": [
 			[
 				"2daabc9d.c95bcc"
@@ -16411,7 +16462,7 @@
 		"outputs": 1,
 		"noerr": 0,
 		"x": 500,
-		"y": 540,
+		"y": 760,
 		"wires": [
 			[
 				"658b340.ec386cc"
@@ -16428,7 +16479,7 @@
 		"showStatusActivities": false,
 		"showErrors": true,
 		"x": 690,
-		"y": 540,
+		"y": 760,
 		"wires": [
 			[
 				"28c3ae3e.5d6b22"
@@ -16448,7 +16499,7 @@
 		"negateFilter": false,
 		"filters": [],
 		"x": 850,
-		"y": 540,
+		"y": 760,
 		"wires": [
 			[]
 		]
@@ -16466,7 +16517,7 @@
 		"format": "{{msg.payload.OUT_w_Actual_ColorValue}}",
 		"layout": "row-spread",
 		"x": 780,
-		"y": 260,
+		"y": 300,
 		"wires": []
 	},
 	{
@@ -16552,7 +16603,7 @@
 		"name": "HMI - calibrate color sensor",
 		"info": "",
 		"x": 140,
-		"y": 500,
+		"y": 720,
 		"wires": []
 	},
 	{
@@ -16600,7 +16651,7 @@
 		"type": "function",
 		"z": "d157eff7.cfa8",
 		"name": "Output Object",
-		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n                    //value out\n                    OUT_x_Calib_Color_Sensor: false,\n                    OUT_i_Color_Sensor_Selection:0,\n                    OUT_w_Calib_ColorValue_Blue: 0,\n                    OUT_w_Calib_ColorValue_Red: 0,\n                    OUT_w_Calib_ColorValue_White: 0,\n                    OUT_w_Actual_ColorValue:0,\n                    OUT_w_Threshold_Red_Blue:0,\n                    OUT_w_Threshold_White_Red:0,\n                    }\n\n\n\nConfData_out.OUT_x_Calib_Color_Sensor = msg.payload[0].value.value;     //[0] \nConfData_out.OUT_i_Color_Sensor_Selection = msg.payload[1].value.value; //[1]\nConfData_out.OUT_w_Calib_ColorValue_Blue =  msg.payload[2].value.value; //[2] \nConfData_out.OUT_w_Calib_ColorValue_Red =  msg.payload[3].value.value;  //[3] \nConfData_out.OUT_w_Calib_ColorValue_White = msg.payload[4].value.value; //[4] \nConfData_out.OUT_w_Actual_ColorValue = msg.payload[5].value.value;      //[5] \nConfData_out.OUT_w_Threshold_Red_Blue = msg.payload[6].value.value;     //[6] \nConfData_out.OUT_w_Threshold_White_Red = msg.payload[7].value.value;    //[7] \n\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
+		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n                    //value out\n                    OUT_x_Calib_Color_Sensor: false,\n                    OUT_i_Color_Sensor_Selection:0,\n                    OUT_w_Calib_ColorValue_Blue: 0,\n                    OUT_w_Calib_ColorValue_Red: 0,\n                    OUT_w_Calib_ColorValue_White: 0,\n                    OUT_w_Actual_ColorValue:0,\n                    OUT_w_Threshold_Red_Blue:0,\n                    OUT_w_Threshold_White_Red:0,\n                    OUT_DSI_w_Threshold_Red_Blue: 1,\n                    OUT_DSI_w_Threshold_White_Red: 1,\n                    OUT_SLD_w_Threshold_Red_Blue: 1,\n                    OUT_SLD_w_Threshold_White_Red: 1,\n                    }\n\n\nConfData_out.OUT_x_Calib_Color_Sensor = msg.payload[0].value.value;     //[0] \nConfData_out.OUT_i_Color_Sensor_Selection = msg.payload[1].value.value; //[1]\nConfData_out.OUT_w_Calib_ColorValue_Blue =  msg.payload[2].value.value; //[2] \nConfData_out.OUT_w_Calib_ColorValue_Red =  msg.payload[3].value.value;  //[3] \nConfData_out.OUT_w_Calib_ColorValue_White = msg.payload[4].value.value; //[4] \nConfData_out.OUT_w_Actual_ColorValue = msg.payload[5].value.value;      //[5] \nConfData_out.OUT_w_Threshold_Red_Blue = msg.payload[6].value.value;     //[6] \nConfData_out.OUT_w_Threshold_White_Red = msg.payload[7].value.value;    //[7] \n\nConfData_out.OUT_DSI_w_Threshold_Red_Blue = msg.payload[8].value.value;    //[0] \nConfData_out.OUT_DSI_w_Threshold_White_Red =  msg.payload[9].value.value;  //[1] \nConfData_out.OUT_SLD_w_Threshold_Red_Blue = msg.payload[10].value.value;    //[2]\nConfData_out.OUT_SLD_w_Threshold_White_Red = msg.payload[11].value.value;   //[3]\n\n\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 400,
@@ -16608,13 +16659,17 @@
 		"wires": [
 			[
 				"805b24fb.fcac1",
-				"f5eb975.0f8efe8",
 				"eee817a7.0958a",
 				"db0fa8a6.088158",
 				"13b0d732.b7a3e1",
 				"c8bcfa0c.6312a8",
 				"5d4797f3.9f3d38",
 				"a99bd513.d45fe8",
+				"ef90ddb7.c55ec",
+				"eaab5c2f.0e4bb8",
+				"b41ff461.3acb88",
+				"e23952ea.f81f5",
+				"f5eb975.0f8efe8",
 				"fea95398.9ce5d8"
 			]
 		]
@@ -16665,7 +16720,7 @@
 		"once": true,
 		"startDelay": "12",
 		"name": "listen",
-		"payload": "1000",
+		"payload": "1500",
 		"addressSpaceItems": [
 			{
 				"name": "",
@@ -16706,6 +16761,26 @@
 				"name": "",
 				"nodeId": "ns=3;s=\"gtyp_Setup\".\"w_Threshold_White_Red\"",
 				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"",
+				"datatypeName": ""
 			}
 		],
 		"x": 110,
@@ -16722,7 +16797,7 @@
 		"z": "d157eff7.cfa8",
 		"connector": "74a7d84.2350d28",
 		"action": "subscribe",
-		"queueSize": 10,
+		"queueSize": "16",
 		"name": "",
 		"topic": "",
 		"justValue": true,
@@ -16756,7 +16831,7 @@
 		"payloadType": "bool",
 		"topic": "Signal1",
 		"x": 330,
-		"y": 600,
+		"y": 820,
 		"wires": [
 			[
 				"a27cc2e4.95e818"
@@ -16772,7 +16847,7 @@
 		"outputs": 1,
 		"noerr": 0,
 		"x": 500,
-		"y": 600,
+		"y": 820,
 		"wires": [
 			[
 				"93271351.381d3"
@@ -16789,7 +16864,7 @@
 		"showStatusActivities": false,
 		"showErrors": true,
 		"x": 690,
-		"y": 600,
+		"y": 820,
 		"wires": [
 			[
 				"d62c7a74.3a4458"
@@ -16809,7 +16884,7 @@
 		"negateFilter": false,
 		"filters": [],
 		"x": 850,
-		"y": 600,
+		"y": 820,
 		"wires": [
 			[]
 		]
@@ -16833,7 +16908,7 @@
 		"payloadType": "bool",
 		"topic": "Signal1",
 		"x": 330,
-		"y": 660,
+		"y": 880,
 		"wires": [
 			[
 				"2b705fc4.b6eae"
@@ -16849,7 +16924,7 @@
 		"outputs": 1,
 		"noerr": 0,
 		"x": 500,
-		"y": 660,
+		"y": 880,
 		"wires": [
 			[
 				"cd04300c.8f045"
@@ -16866,7 +16941,7 @@
 		"showStatusActivities": false,
 		"showErrors": true,
 		"x": 690,
-		"y": 660,
+		"y": 880,
 		"wires": [
 			[
 				"7f567681.534c5"
@@ -16886,7 +16961,7 @@
 		"negateFilter": false,
 		"filters": [],
 		"x": 850,
-		"y": 660,
+		"y": 880,
 		"wires": [
 			[]
 		]
@@ -17108,7 +17183,7 @@
 		"format": "{{msg.payload.OUT_w_Calib_ColorValue_Blue}}",
 		"layout": "row-spread",
 		"x": 750,
-		"y": 300,
+		"y": 340,
 		"wires": []
 	},
 	{
@@ -17124,7 +17199,7 @@
 		"format": "{{msg.payload.OUT_w_Calib_ColorValue_Red}}",
 		"layout": "row-spread",
 		"x": 740,
-		"y": 340,
+		"y": 380,
 		"wires": []
 	},
 	{
@@ -17170,12 +17245,12 @@
 		"order": 2,
 		"width": 9,
 		"height": 1,
-		"passthru": true,
+		"passthru": false,
 		"options": [
 			{
 				"label": "Select sensor",
-				"value": "0",
-				"type": "str"
+				"value": 0,
+				"type": "num"
 			},
 			{
 				"label": "DSI",
@@ -17184,17 +17259,18 @@
 			},
 			{
 				"label": "SLD",
-				"value": "2",
-				"type": "str"
+				"value": 2,
+				"type": "num"
 			}
 		],
 		"payload": "",
-		"topic": "HBW_position_no",
+		"topic": "Color_Calibration_Sensor_no",
 		"x": 930,
 		"y": 200,
 		"wires": [
 			[
-				"c7401ab2.21b9e"
+				"c7401ab2.21b9e",
+				"17cb28c8.f13107"
 			]
 		]
 	},
@@ -17254,7 +17330,7 @@
 		"type": "function",
 		"z": "d157eff7.cfa8",
 		"name": "values to read",
-		"func": "\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Color_Sensor_Calibration\"',\n        \"datatypeName\":'Boolean'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Color_Sensor_Selection\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_Blue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_Red\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_White\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Actual_ColorValue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'Word'},\n        ]\n        \n\n\n\n\nreturn msg;",
+		"func": "\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Color_Sensor_Calibration\"',\n        \"datatypeName\":'Boolean'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Color_Sensor_Selection\"',\n        \"datatypeName\":'Int32'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_Blue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_Red\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Calib_ColorValue_White\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Actual_ColorValue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'Word'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'Word'},\n    //Threshhold DSI\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SSC\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'Int16'},\n    //Threshhold SLD\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_Red_Blue\"',\n        \"datatypeName\":'Int16'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"w_Threshold_White_Red\"',\n        \"datatypeName\":'Int16'},\n        ]\n        \n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 400,
@@ -17293,7 +17369,7 @@
 		"format": "{{msg.payload.OUT_w_Calib_ColorValue_White}}",
 		"layout": "row-spread",
 		"x": 750,
-		"y": 380,
+		"y": 420,
 		"wires": []
 	},
 	{
@@ -17534,8 +17610,8 @@
 		"scope": [
 			"c38758b9.c5c21"
 		],
-		"x": 100,
-		"y": 620,
+		"x": 120,
+		"y": 780,
 		"wires": [
 			[
 				"42590122.2fe46"
@@ -17556,8 +17632,8 @@
 		"reset": "0",
 		"bytopic": "all",
 		"name": "",
-		"x": 490,
-		"y": 620,
+		"x": 510,
+		"y": 780,
 		"wires": [
 			[
 				"3fb7aba9.f81d34"
@@ -17572,8 +17648,8 @@
 		"func": "var local=global.get('data') || {};\nif (local.OPC_con_loss===undefined)//test exists\n    {\n    local.OPC_con_loss=0;\n    }\n\n\n//if (msg.payload === \"Internal Error\")\n//    { \n//    msg.state = 1 ;\n//    }\n//else\n//    {\n    msg.status.text === \"listening (1)\" ? msg.state = 0 : msg.state = 1\n//    }\n\n\nif (msg.status.text === \"listening (1)\")\n    {\n    local.OPC_con_loss=0;    \n    global.set('data',local);\n    }\n\nreturn {\"payload\": msg.state}",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 300,
-		"y": 620,
+		"x": 320,
+		"y": 780,
 		"wires": [
 			[
 				"7122421c.98a41c"
@@ -17588,8 +17664,8 @@
 		"func": "msg.payload = {\n    \"client_id\": \"node-red-editor\",\n    \"grant_type\": \"password\",\n    \"scope\": \"*\",\n    \"username\": \"type or username\",\n    \"password\": \"type your password\"\n}\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 300,
-		"y": 680,
+		"x": 320,
+		"y": 840,
 		"wires": [
 			[
 				"f0934e34.1bcd6"
@@ -17609,8 +17685,8 @@
 		"persist": false,
 		"proxy": "",
 		"authType": "",
-		"x": 470,
-		"y": 680,
+		"x": 490,
+		"y": 840,
 		"wires": [
 			[
 				"cbad7e2b.6c1ac"
@@ -17625,8 +17701,8 @@
 		"func": "var status = msg.statusCode;\nvar token = '';\nmsg.headers ={};\n\n\nswitch(status){\n    case 200:\n        node.log(\"Secure restart\");\n        token = JSON.parse(msg.payload);\n        token = 'Bearer '+token.access_token;\n        msg.headers = {\n            \"Authorization\": token,\n            \"Node-RED-Deployment-Type\":\"reload\"\n        }\nmsg.payload =\"\";\n        break;\n    case 204:\n        node.log(\"Secure without restart\");\n        global.set('result','\tSuccess - with no further content');\n        break;\n    case 400:\n        node.warn(\"Bad request\");\n        break;\n    case 401:\n        node.warn(\"Not authorized\");\n        break;\n    case 403:\n        node.warn(\"Forbidden\");\n        break;\n    case 404:\n        node.log(\"Unsecure restart\");\n        msg.headers = {\n            \"Node-RED-Deployment-Type\":\"reload\"\n        }\n        break;\n    case 409:\n        node.warn(\"Version mismatch\");\n        break;\n    case 500:\n        node.error(\"Server Error\");\n        break;\n    default:\n        node.warn(\"Unknown Error\");\n       break;\n}\n\nmsg.payload = \"\";\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 680,
-		"y": 680,
+		"x": 700,
+		"y": 840,
 		"wires": [
 			[
 				"34e0253c.498f22"
@@ -17647,8 +17723,8 @@
 		"persist": false,
 		"proxy": "",
 		"authType": "",
-		"x": 860,
-		"y": 680,
+		"x": 880,
+		"y": 840,
 		"wires": [
 			[]
 		]
@@ -17659,8 +17735,8 @@
 		"z": "cc38a811.11de2",
 		"name": "Restart Flows when OPC UA connection is lost",
 		"info": "",
-		"x": 200,
-		"y": 480,
+		"x": 220,
+		"y": 640,
 		"wires": []
 	},
 	{
@@ -17671,8 +17747,8 @@
 		"func": "var count=0;\nvar local=global.get('data') || {};\nif (local.OPC_con_loss===undefined)//test exists\n{\nlocal.OPC_con_loss=0;\n}\n\ncount = local.OPC_con_loss;\nif (msg.payload === 1)\n{\ncount = count + 1;\nlocal.OPC_con_loss = count;\nglobal.set('data',local);\n}\n\nif (local.OPC_con_loss > 5)\n{\nmsg.payload = 0;\n}\n\nmsg.con_loss = local.OPC_con_loss;    \n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": msg.payload,\n    \"con_loss\": msg.con_loss,\n};\n\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 700,
-		"y": 620,
+		"x": 720,
+		"y": 780,
 		"wires": [
 			[
 				"ff963ba.def7d48",
@@ -17695,8 +17771,8 @@
 		"raw": false,
 		"topic": "",
 		"name": "",
-		"x": 1230,
-		"y": 620,
+		"x": 1250,
+		"y": 780,
 		"wires": [
 			[]
 		]
@@ -17711,8 +17787,8 @@
 		"start": "",
 		"inout": "in",
 		"property": "payload",
-		"x": 110,
-		"y": 680,
+		"x": 130,
+		"y": 840,
 		"wires": [
 			[
 				"c3c37f15.dbd6"
@@ -17736,8 +17812,8 @@
 		"checkall": "true",
 		"repair": false,
 		"outputs": 1,
-		"x": 910,
-		"y": 620,
+		"x": 930,
+		"y": 780,
 		"wires": [
 			[
 				"a5f99cdd.ec9b58"
@@ -17752,8 +17828,8 @@
 		"func": "\nmsg.payload = \"OPC UA Connection failed check cables!\"\n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 1060,
-		"y": 620,
+		"x": 1080,
+		"y": 780,
 		"wires": [
 			[
 				"63c6cc41.c4bbb4"
@@ -17766,8 +17842,8 @@
 		"z": "cc38a811.11de2",
 		"name": "HBW View",
 		"info": "",
-		"x": 80,
-		"y": 840,
+		"x": 100,
+		"y": 1000,
 		"wires": []
 	},
 	{
@@ -17781,8 +17857,8 @@
 		"tostatus": false,
 		"complete": "true",
 		"targetType": "full",
-		"x": 960,
-		"y": 580,
+		"x": 980,
+		"y": 740,
 		"wires": []
 	},
 	{
@@ -17805,8 +17881,8 @@
 				"datatypeName": ""
 			}
 		],
-		"x": 90,
-		"y": 520,
+		"x": 110,
+		"y": 680,
 		"wires": [
 			[
 				"c38758b9.c5c21"
@@ -17826,8 +17902,8 @@
 		"useGroupItems": false,
 		"showStatusActivities": false,
 		"showErrors": true,
-		"x": 240,
-		"y": 520,
+		"x": 260,
+		"y": 680,
 		"wires": [
 			[
 				"3daf23cf.f2fb4c"
@@ -17842,8 +17918,8 @@
 		"func": "\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n                        {\"name\":\"\",\n                        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Clean_Rack_HBW\"',\n                        \"datatypeName\":'Boolean'},\n                        ]\n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 440,
-		"y": 520,
+		"x": 460,
+		"y": 680,
 		"wires": [
 			[
 				"1726826e.42e1b6"
@@ -17865,8 +17941,8 @@
 		"parseStrings": false,
 		"historyDays": "",
 		"serverMaxItemsToRead": "",
-		"x": 610,
-		"y": 520,
+		"x": 630,
+		"y": 680,
 		"wires": [
 			[
 				"eecdce4e.35b18"
@@ -17885,8 +17961,8 @@
 		"activateFilters": false,
 		"negateFilter": false,
 		"filters": [],
-		"x": 770,
-		"y": 520,
+		"x": 790,
+		"y": 680,
 		"wires": [
 			[]
 		]
@@ -18023,7 +18099,7 @@
 		"type": "function",
 		"z": "18869de1.83d712",
 		"name": "read config data from PLC",
-		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //Pos. Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Counter_Value_Calibration\"',\n        \"datatypeName\":'Boolean'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    //Pos. Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    //Pos White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\nreturn msg;",
+		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //Pos. Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Counter_Value_Calibration\"',\n        \"datatypeName\":'Boolean'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    //Pos. Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    //Pos White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_Setup\".\"i_Calib_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n    //act. Pos. Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    //act. Pos. Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    //act. Pos White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 440,
@@ -18039,7 +18115,7 @@
 		"type": "function",
 		"z": "18869de1.83d712",
 		"name": "Output Object",
-		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n                    OUT_x_Counter_Value_Calibration: false,\n                    OUT_i_Calib_CounterValue_Blue: 1,\n                    OUT_i_Calib_CounterValue_Red: 1,\n                    OUT_i_Calib_CounterValue_White: 1,\n                    }\n\nConfData_out.OUT_x_Counter_Value_Calibration = msg.payload[0].value.value;  //[0]\nConfData_out.OUT_i_Calib_CounterValue_Blue = msg.payload[1].value.value;    //[1] \nConfData_out.OUT_i_Calib_CounterValue_Red =  msg.payload[2].value.value;    //[2] \nConfData_out.OUT_i_Calib_CounterValue_White = msg.payload[3].value.value;   //[3]\n\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
+		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n                    OUT_x_Counter_Value_Calibration: false,\n                    OUT_i_Calib_CounterValue_Blue: 1,\n                    OUT_i_Calib_CounterValue_Red: 1,\n                    OUT_i_Calib_CounterValue_White: 1,\n                    }\n\nConfData_out.OUT_x_Counter_Value_Calibration = msg.payload[0].value.value;  //[0]\nConfData_out.OUT_i_Calib_CounterValue_Blue = msg.payload[1].value.value;    //[1] \nConfData_out.OUT_i_Calib_CounterValue_Red =  msg.payload[2].value.value;    //[2] \nConfData_out.OUT_i_Calib_CounterValue_White = msg.payload[3].value.value;   //[3]\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
 		"outputs": 1,
 		"noerr": 0,
 		"x": 400,
@@ -18131,7 +18207,7 @@
 		"width": 9,
 		"height": 1,
 		"wrap": false,
-		"passthru": true,
+		"passthru": false,
 		"topic": "",
 		"format": "{{msg.payload}}",
 		"min": 0,
@@ -18157,7 +18233,7 @@
 		"width": 9,
 		"height": 1,
 		"wrap": false,
-		"passthru": true,
+		"passthru": false,
 		"topic": "",
 		"format": "{{msg.payload}}",
 		"min": 0,
@@ -18183,7 +18259,7 @@
 		"width": 9,
 		"height": 1,
 		"wrap": false,
-		"passthru": true,
+		"passthru": false,
 		"topic": "",
 		"format": "{{msg.payload}}",
 		"min": 0,
@@ -18363,7 +18439,7 @@
 		"format": "",
 		"layout": "row-spread",
 		"x": 140,
-		"y": 420,
+		"y": 660,
 		"wires": []
 	},
 	{
@@ -18385,7 +18461,7 @@
 		"payloadType": "bool",
 		"topic": "Signal1",
 		"x": 310,
-		"y": 420,
+		"y": 660,
 		"wires": [
 			[
 				"e22a46a0.13e348"
@@ -18401,7 +18477,7 @@
 		"outputs": 1,
 		"noerr": 0,
 		"x": 480,
-		"y": 420,
+		"y": 660,
 		"wires": [
 			[
 				"4e6fce37.dd753"
@@ -18418,7 +18494,7 @@
 		"showStatusActivities": false,
 		"showErrors": true,
 		"x": 650,
-		"y": 420,
+		"y": 660,
 		"wires": [
 			[
 				"3a2102a8.265316"
@@ -18438,7 +18514,7 @@
 		"negateFilter": false,
 		"filters": [],
 		"x": 810,
-		"y": 420,
+		"y": 660,
 		"wires": [
 			[]
 		]
@@ -18450,7 +18526,7 @@
 		"name": "HMI - set calibration values",
 		"info": "",
 		"x": 130,
-		"y": 380,
+		"y": 620,
 		"wires": []
 	},
 	{
@@ -18463,9 +18539,9 @@
 		"repeat": "",
 		"crontab": "",
 		"once": true,
-		"startDelay": "12",
+		"startDelay": "10",
 		"name": "listen",
-		"payload": "1000",
+		"payload": "800",
 		"addressSpaceItems": [
 			{
 				"name": "",
@@ -18502,7 +18578,7 @@
 		"z": "18869de1.83d712",
 		"connector": "74a7d84.2350d28",
 		"action": "subscribe",
-		"queueSize": 10,
+		"queueSize": "6",
 		"name": "",
 		"topic": "",
 		"justValue": true,
@@ -18530,7 +18606,7 @@
 		"format": "{{msg.payload.OUT_w_Threshold_Red_Blue}}",
 		"layout": "row-spread",
 		"x": 750,
-		"y": 420,
+		"y": 460,
 		"wires": []
 	},
 	{
@@ -18546,7 +18622,7 @@
 		"format": "{{msg.payload.OUT_w_Threshold_White_Red}}",
 		"layout": "row-spread",
 		"x": 760,
-		"y": 460,
+		"y": 500,
 		"wires": []
 	},
 	{
@@ -18562,7 +18638,7 @@
 		"format": "",
 		"layout": "row-spread",
 		"x": 160,
-		"y": 760,
+		"y": 980,
 		"wires": []
 	},
 	{
@@ -18584,7 +18660,7 @@
 		"payloadType": "bool",
 		"topic": "Signal1",
 		"x": 350,
-		"y": 760,
+		"y": 980,
 		"wires": [
 			[
 				"34181bef.baf07c"
@@ -18600,7 +18676,7 @@
 		"outputs": 1,
 		"noerr": 0,
 		"x": 520,
-		"y": 760,
+		"y": 980,
 		"wires": [
 			[
 				"7daa72f3.a1efdc"
@@ -18617,7 +18693,7 @@
 		"showStatusActivities": false,
 		"showErrors": true,
 		"x": 690,
-		"y": 760,
+		"y": 980,
 		"wires": [
 			[
 				"4b84541a.7f6004"
@@ -18637,7 +18713,7 @@
 		"negateFilter": false,
 		"filters": [],
 		"x": 850,
-		"y": 760,
+		"y": 980,
 		"wires": [
 			[]
 		]
@@ -18649,7 +18725,7 @@
 		"name": "Calculate threshold",
 		"info": "",
 		"x": 110,
-		"y": 720,
+		"y": 940,
 		"wires": []
 	},
 	{
@@ -18657,7 +18733,7 @@
 		"type": "ui_text",
 		"z": "cc38a811.11de2",
 		"group": "c863b9e5.ef9b6",
-		"order": 4,
+		"order": 7,
 		"width": 6,
 		"height": 1,
 		"name": "",
@@ -18674,7 +18750,7 @@
 		"z": "cc38a811.11de2",
 		"name": "",
 		"group": "c863b9e5.ef9b6",
-		"order": 6,
+		"order": 9,
 		"width": 2,
 		"height": 1,
 		"passthru": false,
@@ -19001,8 +19077,8 @@
 		"z": "cc38a811.11de2",
 		"name": "Restart OPCUA/MQTT Interface",
 		"info": "",
-		"x": 150,
-		"y": 740,
+		"x": 170,
+		"y": 900,
 		"wires": []
 	},
 	{
@@ -19010,15 +19086,15 @@
 		"type": "ui_text",
 		"z": "cc38a811.11de2",
 		"group": "c863b9e5.ef9b6",
-		"order": 7,
+		"order": 11,
 		"width": 6,
 		"height": 1,
 		"name": "",
 		"label": "Restart OPCUA/MQTT Interface",
 		"format": "",
 		"layout": "row-spread",
-		"x": 170,
-		"y": 780,
+		"x": 190,
+		"y": 940,
 		"wires": []
 	},
 	{
@@ -19027,7 +19103,7 @@
 		"z": "cc38a811.11de2",
 		"name": "",
 		"group": "c863b9e5.ef9b6",
-		"order": 9,
+		"order": 13,
 		"width": 2,
 		"height": 1,
 		"passthru": false,
@@ -19039,8 +19115,8 @@
 		"payload": "true",
 		"payloadType": "bool",
 		"topic": "Signal1",
-		"x": 410,
-		"y": 780,
+		"x": 430,
+		"y": 940,
 		"wires": [
 			[
 				"c3c37f15.dbd6"
@@ -19065,8 +19141,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 410,
-		"y": 920,
+		"x": 430,
+		"y": 1080,
 		"wires": [
 			[]
 		]
@@ -19079,8 +19155,8 @@
 		"func": "var state = msg.payload.HBW_A1_s_state\nvar type = msg.payload.HBW_A1_s_type\nvar id = msg.payload.HBW_A1_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.A1_color===undefined)//test exists\n    {\n    local.A1_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.A1_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.A1_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.A1_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.A1_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 270,
-		"y": 1140,
+		"x": 290,
+		"y": 1300,
 		"wires": [
 			[
 				"b76fdee.dc44d2"
@@ -19099,8 +19175,8 @@
 		"label": "1",
 		"format": "{{msg.payload}}",
 		"layout": "row-center",
-		"x": 410,
-		"y": 880,
+		"x": 430,
+		"y": 1040,
 		"wires": []
 	},
 	{
@@ -19115,8 +19191,8 @@
 		"label": "2",
 		"format": "{{msg.payload}}",
 		"layout": "row-center",
-		"x": 570,
-		"y": 880,
+		"x": 590,
+		"y": 1040,
 		"wires": []
 	},
 	{
@@ -19131,8 +19207,8 @@
 		"label": "3",
 		"format": "{{msg.payload}}",
 		"layout": "row-center",
-		"x": 750,
-		"y": 880,
+		"x": 770,
+		"y": 1040,
 		"wires": []
 	},
 	{
@@ -19153,8 +19229,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 570,
-		"y": 920,
+		"x": 590,
+		"y": 1080,
 		"wires": [
 			[]
 		]
@@ -19177,8 +19253,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 750,
-		"y": 920,
+		"x": 770,
+		"y": 1080,
 		"wires": [
 			[]
 		]
@@ -19195,8 +19271,8 @@
 		"label": "A",
 		"format": "{{msg.payload}}",
 		"layout": "row-spread",
-		"x": 230,
-		"y": 920,
+		"x": 250,
+		"y": 1080,
 		"wires": []
 	},
 	{
@@ -19211,8 +19287,8 @@
 		"label": "B",
 		"format": "{{msg.payload}}",
 		"layout": "row-spread",
-		"x": 230,
-		"y": 960,
+		"x": 250,
+		"y": 1120,
 		"wires": []
 	},
 	{
@@ -19233,8 +19309,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 410,
-		"y": 960,
+		"x": 430,
+		"y": 1120,
 		"wires": [
 			[]
 		]
@@ -19257,8 +19333,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 570,
-		"y": 960,
+		"x": 590,
+		"y": 1120,
 		"wires": [
 			[]
 		]
@@ -19281,8 +19357,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 750,
-		"y": 960,
+		"x": 770,
+		"y": 1120,
 		"wires": [
 			[]
 		]
@@ -19299,8 +19375,8 @@
 		"label": "C",
 		"format": "{{msg.payload}}",
 		"layout": "row-spread",
-		"x": 230,
-		"y": 1000,
+		"x": 250,
+		"y": 1160,
 		"wires": []
 	},
 	{
@@ -19321,8 +19397,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 410,
-		"y": 1000,
+		"x": 430,
+		"y": 1160,
 		"wires": [
 			[]
 		]
@@ -19345,8 +19421,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 570,
-		"y": 1000,
+		"x": 590,
+		"y": 1160,
 		"wires": [
 			[]
 		]
@@ -19369,8 +19445,8 @@
 		"payload": "",
 		"payloadType": "str",
 		"topic": "",
-		"x": 750,
-		"y": 1000,
+		"x": 770,
+		"y": 1160,
 		"wires": [
 			[]
 		]
@@ -19395,8 +19471,8 @@
 				"datatypeName": ""
 			}
 		],
-		"x": 90,
-		"y": 1080,
+		"x": 110,
+		"y": 1240,
 		"wires": [
 			[
 				"d2a85064.4fd0f"
@@ -19416,8 +19492,8 @@
 		"useGroupItems": false,
 		"showStatusActivities": false,
 		"showErrors": true,
-		"x": 220,
-		"y": 1080,
+		"x": 240,
+		"y": 1240,
 		"wires": [
 			[
 				"d46bbb03.35203"
@@ -19432,8 +19508,8 @@
 		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //ROW A\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,0].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,0].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,0].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,1].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,1].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,1].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,2].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,2].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[0,2].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    //ROW B\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,0].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,0].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,0].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,1].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,1].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,1].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,2].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,2].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[1,2].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    //ROW C\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,0].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,0].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,0].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,1].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,1].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,1].\"s_type\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,2].\"s_id\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,2].\"s_state\"',\n        \"datatypeName\":'STRING'},\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_HBW\".\"Rack_Workpiece\"[2,2].\"s_type\"',\n        \"datatypeName\":'STRING'},\n        ]\n\nreturn msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 380,
-		"y": 1080,
+		"x": 400,
+		"y": 1240,
 		"wires": [
 			[
 				"401e28fa.91088"
@@ -19455,8 +19531,8 @@
 		"parseStrings": false,
 		"historyDays": "",
 		"serverMaxItemsToRead": "",
-		"x": 570,
-		"y": 1080,
+		"x": 590,
+		"y": 1240,
 		"wires": [
 			[
 				"e7c2b1e3.49f008",
@@ -19476,8 +19552,8 @@
 		"activateFilters": false,
 		"negateFilter": false,
 		"filters": [],
-		"x": 770,
-		"y": 1080,
+		"x": 790,
+		"y": 1240,
 		"wires": [
 			[]
 		]
@@ -19493,8 +19569,8 @@
 		"tostatus": false,
 		"complete": "true",
 		"targetType": "full",
-		"x": 300,
-		"y": 1260,
+		"x": 320,
+		"y": 1420,
 		"wires": []
 	},
 	{
@@ -19505,8 +19581,8 @@
 		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n\n                    //declaration\n                    //HBW ROW A\n                    HBW_A1_s_id: \"\",    //[0]\n                    HBW_A1_s_state: \"\", //[1]\n                    HBW_A1_s_type: \"\",  //[2]\n                    HBW_A2_s_id: \"\",    //[3]\n                    HBW_A2_s_state: \"\", //[4]\n                    HBW_A2_s_type: \"\",  //[5]\n                    HBW_A3_s_id: \"\",    //[6]\n                    HBW_A3_s_state: \"\", //[7]\n                    HBW_A3_s_type: \"\",  //[8]\n\n                    //HBW ROW B\n                    HBW_B1_s_id: \"\",    //[9]\n                    HBW_B1_s_state: \"\", //[10]\n                    HBW_B1_s_type: \"\",  //[11]\n                    HBW_B2_s_id: \"\",    //[12]\n                    HBW_B2_s_state: \"\", //[13]\n                    HBW_B2_s_type: \"\",  //[14]\n                    HBW_B3_s_id: \"\",    //[15]\n                    HBW_B3_s_state: \"\", //[16]\n                    HBW_B3_s_type: \"\",  //[17]\n\n                    //HBW ROW C\n                    HBW_C1_s_id: \"\",    //[18]\n                    HBW_C1_s_state: \"\", //[19]\n                    HBW_C1_s_type: \"\",  //[20]\n                    HBW_C2_s_id: \"\",    //[21]\n                    HBW_C2_s_state: \"\", //[22]\n                    HBW_C2_s_type: \"\",  //[23]\n                    HBW_C3_s_id: \"\",    //[24]\n                    HBW_C3_s_state: \"\", //[25]\n                    HBW_C3_s_type: \"\",  //[26]\n                    }\n\n//HBW ROW A\nConfData_out.HBW_A1_s_id = msg.payload[0].value.value;      //[0] \nConfData_out.HBW_A1_s_state =  msg.payload[1].value.value;  //[1] \nConfData_out.HBW_A1_s_type = msg.payload[2].value.value;    //[2]\n\nConfData_out.HBW_A2_s_id = msg.payload[3].value.value;      //[3] \nConfData_out.HBW_A2_s_state =  msg.payload[4].value.value;  //[4] \nConfData_out.HBW_A2_s_type = msg.payload[5].value.value;    //[5]\n\nConfData_out.HBW_A3_s_id = msg.payload[6].value.value;      //[6] \nConfData_out.HBW_A3_s_state =  msg.payload[7].value.value;  //[7] \nConfData_out.HBW_A3_s_type = msg.payload[8].value.value;    //[8]\n\n//HBW ROW B\nConfData_out.HBW_B1_s_id = msg.payload[9].value.value;       //[9] \nConfData_out.HBW_B1_s_state =  msg.payload[10].value.value;  //[10] \nConfData_out.HBW_B1_s_type = msg.payload[11].value.value;    //[11]\n\nConfData_out.HBW_B2_s_id = msg.payload[12].value.value;      //[12] \nConfData_out.HBW_B2_s_state =  msg.payload[13].value.value;  //[13] \nConfData_out.HBW_B2_s_type = msg.payload[14].value.value;    //[14]\n\nConfData_out.HBW_B3_s_id = msg.payload[15].value.value;      //[15] \nConfData_out.HBW_B3_s_state =  msg.payload[16].value.value;  //[16] \nConfData_out.HBW_B3_s_type = msg.payload[17].value.value;    //[17]\n\n//HBW ROW C\nConfData_out.HBW_C1_s_id = msg.payload[18].value.value;      //[18] \nConfData_out.HBW_C1_s_state =  msg.payload[19].value.value;  //[19] \nConfData_out.HBW_C1_s_type = msg.payload[20].value.value;    //[20]\n\nConfData_out.HBW_C2_s_id = msg.payload[21].value.value;      //[21] \nConfData_out.HBW_C2_s_state =  msg.payload[22].value.value;  //[22] \nConfData_out.HBW_C2_s_type = msg.payload[23].value.value;    //[23]\n\nConfData_out.HBW_C3_s_id = msg.payload[24].value.value;      //[24] \nConfData_out.HBW_C3_s_state =  msg.payload[25].value.value;  //[25] \nConfData_out.HBW_C3_s_type = msg.payload[26].value.value;    //[26]\n\n\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 110,
-		"y": 1140,
+		"x": 130,
+		"y": 1300,
 		"wires": [
 			[
 				"4e54723a.247904",
@@ -19530,8 +19606,8 @@
 		"func": "var state = msg.payload.HBW_A2_s_state\nvar type = msg.payload.HBW_A2_s_type\nvar id = msg.payload.HBW_A2_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.A2_color===undefined)//test exists\n    {\n    local.A2_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.A2_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.A2_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.A2_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.A2_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 430,
-		"y": 1140,
+		"x": 450,
+		"y": 1300,
 		"wires": [
 			[
 				"77c361a.48ce5a"
@@ -19546,8 +19622,8 @@
 		"func": "var state = msg.payload.HBW_A3_s_state\nvar type = msg.payload.HBW_A3_s_type\nvar id = msg.payload.HBW_A3_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.A3_color===undefined)//test exists\n    {\n    local.A3_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.A3_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.A3_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.A3_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.A3_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 590,
-		"y": 1140,
+		"x": 610,
+		"y": 1300,
 		"wires": [
 			[
 				"4d16f76f.48f3b8"
@@ -19562,8 +19638,8 @@
 		"func": "var state = msg.payload.HBW_B1_s_state\nvar type = msg.payload.HBW_B1_s_type\nvar id = msg.payload.HBW_B1_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.B1_color===undefined)//test exists\n    {\n    local.B1_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.B1_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.B1_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.B1_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.B1_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 270,
-		"y": 1180,
+		"x": 290,
+		"y": 1340,
 		"wires": [
 			[
 				"fa1f6852.2a682"
@@ -19578,8 +19654,8 @@
 		"func": "var state = msg.payload.HBW_B2_s_state\nvar type = msg.payload.HBW_B2_s_type\nvar id = msg.payload.HBW_B2_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.B2_color===undefined)//test exists\n    {\n    local.B2_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.B2_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.B2_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.B2_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.B2_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 430,
-		"y": 1180,
+		"x": 450,
+		"y": 1340,
 		"wires": [
 			[
 				"961ce14f.afb18"
@@ -19594,8 +19670,8 @@
 		"func": "var state = msg.payload.HBW_B3_s_state\nvar type = msg.payload.HBW_B3_s_type\nvar id = msg.payload.HBW_B3_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.B3_color===undefined)//test exists\n    {\n    local.B3_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.B3_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.B3_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.B3_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.B3_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 590,
-		"y": 1180,
+		"x": 610,
+		"y": 1340,
 		"wires": [
 			[
 				"b6a6d9dc.21db88"
@@ -19608,8 +19684,8 @@
 		"z": "cc38a811.11de2",
 		"name": "End",
 		"info": "",
-		"x": 70,
-		"y": 1320,
+		"x": 90,
+		"y": 1480,
 		"wires": []
 	},
 	{
@@ -19620,8 +19696,8 @@
 		"func": "var state = msg.payload.HBW_C1_s_state\nvar type = msg.payload.HBW_C1_s_type\nvar id = msg.payload.HBW_C1_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.C1_color===undefined)//test exists\n    {\n    local.C1_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.C1_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.C1_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.C1_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.C1_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 280,
-		"y": 1220,
+		"x": 300,
+		"y": 1380,
 		"wires": [
 			[
 				"13482650.5cc49a"
@@ -19636,8 +19712,8 @@
 		"func": "var state = msg.payload.HBW_C2_s_state\nvar type = msg.payload.HBW_C2_s_type\nvar id = msg.payload.HBW_C2_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.C2_color===undefined)//test exists\n    {\n    local.C2_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.C2_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.C2_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.C2_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.C2_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 440,
-		"y": 1220,
+		"x": 460,
+		"y": 1380,
 		"wires": [
 			[
 				"c1ec6eed.6c4ee8"
@@ -19652,8 +19728,8 @@
 		"func": "var state = msg.payload.HBW_C3_s_state\nvar type = msg.payload.HBW_C3_s_type\nvar id = msg.payload.HBW_C3_s_id\n\nvar local=global.get('HBW_Rack_state') || {};\nif (local.C3_color===undefined)//test exists\n    {\n    local.C3_color=\"\";\n    }\n\nswitch(state)\n{\n    case \"RAW\":\n        msg.label = \"<i class='fa fa-square fa-3x'></i>\";\n        break;\n    case \"PROCESSED\":\n        msg.label = \"<i class='fa fa-circle fa-3x'></i>\";\n        break;\n    default:\n        // label löschen\n        msg.label = \"\";\n} \n\nswitch(type)\n{\n    case \"WHITE\":\n        msg.TXT_color = \"white\";\n        local.C3_color = \"white\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"RED\":\n        msg.TXT_color = \"red\";\n        local.C3_color = \"red\";    \n        global.set('HBW_Rack_state',local);\n        break;\n        \n    case \"BLUE\":\n        msg.TXT_color = \"blue\";\n        local.C3_color = \"blue\";    \n        global.set('HBW_Rack_state',local);\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.TXT_color = \"white\";\n        local.C3_color = \"\";    \n        global.set('HBW_Rack_state',local);\n\n} \n\n\nswitch(id)\n{\n    case \"\":\n        msg.BG_colour = \"white\";\n        msg.TXT_colour = \"white\";\n        msg.label = \"\";\n        break;\n\n    case \"0\":\n        msg.BG_colour = \"lightgray\";\n        msg.TXT_color = \"lightgray\";\n        msg.label = \"\";\n        break;\n\n    default:\n        // Farbe auf normal setzen\n        msg.BG_colour = \"lightgray\";\n} \n\n\n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"topic\": (msg.topic),\n        \"label\": (msg.label),\n        \"BG_color\":(msg.BG_colour),\n        \"TXT_color\":(msg.TXT_color),\n\n    }\n};\n",
 		"outputs": 1,
 		"noerr": 0,
-		"x": 600,
-		"y": 1220,
+		"x": 620,
+		"y": 1380,
 		"wires": [
 			[
 				"85939166.c57078"
@@ -19999,6 +20075,394 @@
 				"ce5f008d.321c5",
 				"31ae2fb.2c081d"
 			]
+		]
+	},
+	{
+		"id": "e136135c.f7478",
+		"type": "comment",
+		"z": "cc38a811.11de2",
+		"name": "Move to Park Position",
+		"info": "",
+		"x": 120,
+		"y": 480,
+		"wires": []
+	},
+	{
+		"id": "a48fffd3.d71658",
+		"type": "ui_text",
+		"z": "cc38a811.11de2",
+		"group": "c863b9e5.ef9b6",
+		"order": 4,
+		"width": 6,
+		"height": 1,
+		"name": "",
+		"label": "Move to park position:",
+		"format": "",
+		"layout": "row-spread",
+		"x": 140,
+		"y": 520,
+		"wires": []
+	},
+	{
+		"id": "66b106c6.d97458",
+		"type": "ui_button",
+		"z": "cc38a811.11de2",
+		"name": "",
+		"group": "c863b9e5.ef9b6",
+		"order": 6,
+		"width": 2,
+		"height": 1,
+		"passthru": false,
+		"label": "PARKING",
+		"tooltip": "",
+		"color": "",
+		"bgcolor": "",
+		"icon": "done",
+		"payload": "true",
+		"payloadType": "bool",
+		"topic": "Signal1",
+		"x": 320,
+		"y": 520,
+		"wires": [
+			[
+				"a9cdc024.a4fdf"
+			]
+		]
+	},
+	{
+		"id": "a9cdc024.a4fdf",
+		"type": "function",
+		"z": "cc38a811.11de2",
+		"name": "declare values",
+		"func": "//var ts = new Date().toISOString();\nvar wert = msg.payload\n\nmsg.nodetype = \"inject\";\nmsg.injectType = \"write\";\n\nmsg.addressSpaceItems = [\n        {\"nodeId\":'ns=3;s=\"gtyp_Setup\".\"x_Park_Position\"',\n        \"datatypeName\":'Boolean'},\n        ]\n\n//msg.payload[\"ts\"] = ts;\nmsg.valuesToWrite = [wert];\n\nreturn msg;\n\n\n",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 500,
+		"y": 520,
+		"wires": [
+			[
+				"2e21b329.0a27d4"
+			]
+		]
+	},
+	{
+		"id": "2e21b329.0a27d4",
+		"type": "OPCUA-IIoT-Write",
+		"z": "cc38a811.11de2",
+		"connector": "74a7d84.2350d28",
+		"name": "",
+		"justValue": true,
+		"showStatusActivities": false,
+		"showErrors": true,
+		"x": 670,
+		"y": 520,
+		"wires": [
+			[
+				"b72ead2a.97aa98"
+			]
+		]
+	},
+	{
+		"id": "b72ead2a.97aa98",
+		"type": "OPCUA-IIoT-Response",
+		"z": "cc38a811.11de2",
+		"name": "",
+		"compressStructure": false,
+		"showStatusActivities": false,
+		"showErrors": false,
+		"activateUnsetFilter": false,
+		"activateFilters": false,
+		"negateFilter": false,
+		"filters": [],
+		"x": 830,
+		"y": 520,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "abe4ade2.ffeb6",
+		"type": "ui_text",
+		"z": "18869de1.83d712",
+		"group": "68fd9c4b.55b26c",
+		"order": 3,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "pushout val. blue:",
+		"format": "{{msg.payload.OUT_act_i_Calib_CounterValue_Blue}}",
+		"layout": "row-spread",
+		"x": 670,
+		"y": 520,
+		"wires": []
+	},
+	{
+		"id": "cea227c2.aaa878",
+		"type": "ui_text",
+		"z": "18869de1.83d712",
+		"group": "68fd9c4b.55b26c",
+		"order": 2,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "pushout val. red:",
+		"format": "{{msg.payload.OUT_act_i_Calib_CounterValue_Red}}",
+		"layout": "row-spread",
+		"x": 670,
+		"y": 480,
+		"wires": []
+	},
+	{
+		"id": "3c7a583d.2ea25",
+		"type": "ui_text",
+		"z": "18869de1.83d712",
+		"group": "68fd9c4b.55b26c",
+		"order": 1,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "pushout val. white:",
+		"format": "{{msg.payload.OUT_act_i_Calib_CounterValue_White}}",
+		"layout": "row-spread",
+		"x": 670,
+		"y": 440,
+		"wires": []
+	},
+	{
+		"id": "eaab5c2f.0e4bb8",
+		"type": "ui_text",
+		"z": "d157eff7.cfa8",
+		"group": "6144f93c.58106",
+		"order": 1,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "threshold val. white-red:",
+		"format": "{{msg.payload.OUT_DSI_w_Threshold_White_Red}}",
+		"layout": "row-spread",
+		"x": 770,
+		"y": 600,
+		"wires": []
+	},
+	{
+		"id": "ef90ddb7.c55ec",
+		"type": "ui_text",
+		"z": "d157eff7.cfa8",
+		"group": "6144f93c.58106",
+		"order": 2,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "threshold val. red-blue:",
+		"format": "{{msg.payload.OUT_DSI_w_Threshold_Red_Blue}}",
+		"layout": "row-spread",
+		"x": 770,
+		"y": 560,
+		"wires": []
+	},
+	{
+		"id": "edd94019.fa7848",
+		"type": "comment",
+		"z": "d157eff7.cfa8",
+		"name": "actual threshold values",
+		"info": "",
+		"x": 540,
+		"y": 560,
+		"wires": []
+	},
+	{
+		"id": "b41ff461.3acb88",
+		"type": "ui_text",
+		"z": "d157eff7.cfa8",
+		"group": "4e1ad0e2.f207f8",
+		"order": 2,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "threshold val. red-blue:",
+		"format": "{{msg.payload.OUT_SLD_w_Threshold_Red_Blue}}",
+		"layout": "row-spread",
+		"x": 770,
+		"y": 660,
+		"wires": []
+	},
+	{
+		"id": "e23952ea.f81f5",
+		"type": "ui_text",
+		"z": "d157eff7.cfa8",
+		"group": "4e1ad0e2.f207f8",
+		"order": 1,
+		"width": 9,
+		"height": 1,
+		"name": "",
+		"label": "threshold val. white-red:",
+		"format": "{{msg.payload.OUT_SLD_w_Threshold_White_Red}}",
+		"layout": "row-spread",
+		"x": 770,
+		"y": 700,
+		"wires": []
+	},
+	{
+		"id": "743c8e90.a6a028",
+		"type": "OPCUA-IIoT-Inject",
+		"z": "18869de1.83d712",
+		"injectType": "listen",
+		"payloadType": "num",
+		"topic": "",
+		"repeat": "",
+		"crontab": "",
+		"once": true,
+		"startDelay": "6",
+		"name": "listen",
+		"payload": "600",
+		"addressSpaceItems": [
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"",
+				"datatypeName": ""
+			},
+			{
+				"name": "",
+				"nodeId": "ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"",
+				"datatypeName": ""
+			}
+		],
+		"x": 90,
+		"y": 380,
+		"wires": [
+			[
+				"ea2e823.babb2"
+			]
+		]
+	},
+	{
+		"id": "ea2e823.babb2",
+		"type": "OPCUA-IIoT-Listener",
+		"z": "18869de1.83d712",
+		"connector": "74a7d84.2350d28",
+		"action": "subscribe",
+		"queueSize": "6",
+		"name": "",
+		"topic": "",
+		"justValue": true,
+		"useGroupItems": false,
+		"showStatusActivities": false,
+		"showErrors": true,
+		"x": 220,
+		"y": 380,
+		"wires": [
+			[
+				"702d88ad.9399e"
+			]
+		]
+	},
+	{
+		"id": "702d88ad.9399e",
+		"type": "function",
+		"z": "18869de1.83d712",
+		"name": "read config data from PLC",
+		"func": "msg.nodetype = \"inject\";\nmsg.injectType = \"read\";\n\nmsg.addressSpaceItems = [\n    //act. Pos. Blue\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Blue\"',\n        \"datatypeName\":'Int16'},\n    //act. Pos. Red\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_Red\"',\n        \"datatypeName\":'Int16'},\n    //act. Pos White\n    {   \"name\":\"\",\n        \"nodeId\":'ns=3;s=\"gtyp_SLD\".\"i_CounterValue_White\"',\n        \"datatypeName\":'Int16'},\n        ]\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 420,
+		"y": 380,
+		"wires": [
+			[
+				"7220b6b1.4fcf98"
+			]
+		]
+	},
+	{
+		"id": "7220b6b1.4fcf98",
+		"type": "OPCUA-IIoT-Read",
+		"z": "18869de1.83d712",
+		"attributeId": "13",
+		"maxAge": 1,
+		"depth": 1,
+		"connector": "74a7d84.2350d28",
+		"name": "",
+		"justValue": true,
+		"showStatusActivities": false,
+		"showErrors": false,
+		"parseStrings": false,
+		"historyDays": "",
+		"serverMaxItemsToRead": "",
+		"x": 630,
+		"y": 380,
+		"wires": [
+			[
+				"d3935038.55dd9",
+				"866cf649.455d5"
+			]
+		]
+	},
+	{
+		"id": "d3935038.55dd9",
+		"type": "OPCUA-IIoT-Response",
+		"z": "18869de1.83d712",
+		"name": "",
+		"compressStructure": false,
+		"showStatusActivities": false,
+		"showErrors": false,
+		"activateUnsetFilter": false,
+		"activateFilters": false,
+		"negateFilter": false,
+		"filters": [],
+		"x": 810,
+		"y": 380,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "866cf649.455d5",
+		"type": "function",
+		"z": "18869de1.83d712",
+		"name": "Output Object",
+		"func": "var new_msg = { payload: \"\" };\nvar ConfData_out =   {\n                    OUT_act_i_Calib_CounterValue_Blue: 1,\n                    OUT_act_i_Calib_CounterValue_Red: 1,\n                    OUT_act_i_Calib_CounterValue_White: 1,\n                    }\n\nConfData_out.OUT_act_i_Calib_CounterValue_Blue = msg.payload[0].value.value;    //[0] \nConfData_out.OUT_act_i_Calib_CounterValue_Red =  msg.payload[1].value.value;    //[1] \nConfData_out.OUT_act_i_Calib_CounterValue_White = msg.payload[2].value.value;   //[2]\nnew_msg.payload = ConfData_out;\n\nreturn new_msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 380,
+		"y": 440,
+		"wires": [
+			[
+				"3c7a583d.2ea25",
+				"cea227c2.aaa878",
+				"abe4ade2.ffeb6"
+			]
+		]
+	},
+	{
+		"id": "17cb28c8.f13107",
+		"type": "function",
+		"z": "d157eff7.cfa8",
+		"name": "switch UI Groups",
+		"func": "switch(msg.payload)\n{\n    case 0:\n        msg.group = {   \"hide\": [\"nix\",\n                                ],\n                        \"show\": [\n                                \"HMI_-_Calibration_Color_Sensor_DSI_-_act._values\",\n                                \"HMI_-_Calibration_Color_Sensor_SLD_-_act._values\",\n                                ],\n                        \"focus\": true\n                    };\n        break;\n\n    case 1:\n        msg.group = {   \"hide\": [\n                                \"HMI_-_Calibration_Color_Sensor_SLD_-_act._values\",\n                                ],\n                        \"show\": [\n                                \"HMI_-_Calibration_Color_Sensor_DSI_-_act._values\",\n                        ],\n                        \"focus\": true\n                    };\n        break;\n\n\n    case 2:\n        msg.group = {   \"hide\": [\n                                \"HMI_-_Calibration_Color_Sensor_DSI_-_act._values\",\n                                ],\n                        \"show\": [\n                                \"HMI_-_Calibration_Color_Sensor_SLD_-_act._values\",\n                                ],\n                        \"focus\": true\n                    };\n        break;\n\n    default:\n        msg.group = {   \"hide\": [\"nix\",\n                                ],\n                        \"show\": [\n                                \"HMI_-_Calibration_Color_Sensor_DSI_-_act._values\",\n                                \"HMI_-_Calibration_Color_Sensor_SLD_-_act._values\",\n                                ],\n                        \"focus\": true\n                    };    \n\n} \n\nreturn {\n    \"topic\": msg.topic,\n    \"payload\": {\n        \"group\" : msg.group,\n        \"BG_colour\": \"\",\n        \"Background\":\"gray\",\n    }\n};\n",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1150,
+		"y": 260,
+		"wires": [
+			[
+				"826abcac.f40078"
+			]
+		]
+	},
+	{
+		"id": "826abcac.f40078",
+		"type": "ui_ui_control",
+		"z": "d157eff7.cfa8",
+		"name": "",
+		"events": "all",
+		"x": 1340,
+		"y": 260,
+		"wires": [
+			[]
 		]
 	}
 ]

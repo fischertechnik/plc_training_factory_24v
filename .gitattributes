@@ -1,11 +1,5 @@
-Node-RED/* -linguist-vendored
-PLC_S7_1500/* linguist-vendored
-PLC_S7_1500_exercises/* linguist-vendored
-PLC_SCL_sources/* linguist-vendored
+Node-RED/* linguist-vendored=false
+PLC_S7_1500/* linguist-vendored=true
+PLC_S7_1500_exercises/* linguist-vendored=true
+PLC_SCL_sources/* linguist-vendored=true
 doc/* linguist-documentation
-
-#*.scl linguist-detectable
-#*.scl linguist-language=SCL
-
-#*.zap16 linguist-detectable
-#*.zap16 linguist-language=TIA_Portal_V16
