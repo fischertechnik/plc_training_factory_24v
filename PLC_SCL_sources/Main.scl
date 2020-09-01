@@ -1344,7 +1344,11 @@ BEGIN
 	IF #lx_Init THEN
 	    
 	    // Restart after set Positioning
-	    IF "gtyp_Setup".x_Set_Pos_Activ OR "gtyp_Setup".x_Color_Sensor_Calibration OR "gtyp_VGR".x_Start_Park_Position THEN
+	    IF "gtyp_Setup".x_Set_Pos_Activ OR "gtyp_Setup".x_Color_Sensor_Calibration OR "gtyp_VGR".x_Start_Park_Position OR "gtyp_MPO".x_Error THEN
+	        IF "gtyp_MPO".x_Error THEN
+	            "gtyp_VGR".x_MPO_Req_Discard := FALSE;
+	            "gtyp_VGR".x_MPO_Discards := FALSE;
+	        END_IF;
 	        #li_StepCase := 0;
 	    END_IF;
 	    
@@ -1416,14 +1420,15 @@ BEGIN
 	            "QX_VGR_Compressor_Q7" := FALSE;
 	            "QX_VGR_ValveVacuum_Q8" := FALSE;
 	            
-	            IF NOT "gtyp_Setup".x_Set_Pos_Activ AND NOT "gtyp_VGR".x_Start_Park_Position THEN
+	            IF NOT "gtyp_Setup".x_Set_Pos_Activ AND NOT "gtyp_VGR".x_Start_Park_Position AND NOT "gtyp_MPO".x_Error THEN
 	                #li_StepCase := 10;
 	            END_IF;
 	            
 	        10: // homing vertical axis
 	            #li_Lights := 2;
-	            "gtyp_VGR".x_Ready_For_Outsource     := TRUE;
-	            "gtyp_VGR".vertical_Axis.x_Reference := TRUE;
+	            "gtyp_VGR".x_Ready_For_Outsource        := TRUE;
+	            "gtyp_VGR".vertical_Axis.x_Reference    := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM          := 800;
 	            
 	            IF NOT "gtyp_VGR".vertical_Axis.x_Referenced THEN
 	                #li_StepCase := 20;
@@ -1519,6 +1524,7 @@ BEGIN
 	            "gtyp_VGR".horizontal_Axis.x_Start_Positioning := TRUE;
 	            
 	            "gtyp_VGR".vertical_Axis.x_Reference := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            
 	            "gtyp_VGR".rotate_Axis.di_Target_Position := #ldi_Pos_SLD_Z;
 	            "gtyp_VGR".rotate_Axis.x_Start_Positioning := TRUE;
@@ -1582,6 +1588,7 @@ BEGIN
 	        130: // Position vertical finished part
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := #ldi_Pos_SLD_Y;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= (#ldi_Pos_SLD_Y + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= (#ldi_Pos_SLD_Y - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
@@ -1633,6 +1640,7 @@ BEGIN
 	        160: // Position vertical preposition NFC
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
@@ -1706,6 +1714,7 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
@@ -1726,6 +1735,7 @@ BEGIN
 	        240: // homing vertical axis
 	            
 	            "gtyp_VGR".vertical_Axis.x_Reference := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            
 	            IF NOT "gtyp_VGR".vertical_Axis.x_Referenced THEN
 	                #li_StepCase := 250;
@@ -1781,12 +1791,14 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_DSO_Discard_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_DSO_Discard_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_DSO_Discard_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".x_State_Process := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 290;
 	            END_IF;
 	            
@@ -1869,8 +1881,8 @@ BEGIN
 	            "gtyp_VGR".rotate_Axis.di_Target_Position := "gtyp_VGR".di_Pos_HBW_rotate;
 	            "gtyp_VGR".rotate_Axis.x_Start_Positioning := TRUE;
 	            
-	            "gtyp_VGR".horizontal_Axis.x_Reference := TRUE;
-	            "gtyp_VGR".vertical_Axis.x_Reference := TRUE;
+	            "gtyp_VGR".horizontal_Axis.x_Reference  := TRUE;
+	            "gtyp_VGR".vertical_Axis.x_Reference    := TRUE;
 	            
 	            IF ("gtyp_VGR".rotate_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_HBW_rotate + "gtyp_VGR".rotate_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".rotate_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_HBW_rotate - "gtyp_VGR".rotate_Axis.Config.di_Pos_Window))
@@ -1936,11 +1948,13 @@ BEGIN
 	        450: // Position vertical Collect HBW
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_HBW_Collect_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_HBW_Collect_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_HBW_Collect_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 460;
 	            END_IF;
 	            
@@ -2019,6 +2033,7 @@ BEGIN
 	            "gtyp_VGR".horizontal_Axis.x_Start_Positioning := TRUE;
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_MPO_vertical - "gtyp_VGR".di_Offset_Pos_MPO_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".horizontal_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_MPO_horizontal + "gtyp_VGR".horizontal_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".horizontal_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_MPO_horizontal - "gtyp_VGR".horizontal_Axis.Config.di_Pos_Window))
@@ -2040,6 +2055,7 @@ BEGIN
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".horizontal_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 520;
 	            END_IF;
 	            
@@ -2048,11 +2064,13 @@ BEGIN
 	            IF "gtyp_MPO".x_Discard_Ready THEN
 	                "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_MPO_vertical;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	                
 	                IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_MPO_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                    AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_MPO_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                    AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                    "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                    "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                    #li_StepCase := 530;
 	                    "gtyp_VGR".x_MPO_Req_Discard := FALSE;
 	                END_IF;
@@ -2078,12 +2096,14 @@ BEGIN
 	            IF "gtyp_MPO".x_MPO_Discards_Accepted THEN
 	                "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_MPO_vertical - "gtyp_VGR".di_Offset_Pos_MPO_vertical;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	                
 	                IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_MPO_vertical - "gtyp_VGR".di_Offset_Pos_MPO_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                    AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_MPO_vertical - "gtyp_VGR".di_Offset_Pos_MPO_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                    AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                    "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
 	                    "gtyp_VGR".x_MPO_Discards := FALSE;
+	                    "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                    #li_StepCase := 560;
 	                END_IF;
 	            END_IF;
@@ -2127,6 +2147,7 @@ BEGIN
 	            "gtyp_VGR".horizontal_Axis.x_Start_Positioning := TRUE;
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_DSI_Collect_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            "gtyp_VGR".rotate_Axis.di_Target_Position := "gtyp_VGR".di_Pos_DSI_rotate;
 	            "gtyp_VGR".rotate_Axis.x_Start_Positioning := TRUE;
 	            
@@ -2160,6 +2181,7 @@ BEGIN
 	                "gtyp_VGR".horizontal_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".rotate_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 610;
 	            END_IF;
 	            
@@ -2201,6 +2223,7 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
@@ -2261,11 +2284,13 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 700;
 	            END_IF;
 	            
@@ -2281,6 +2306,7 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
@@ -2331,11 +2357,13 @@ BEGIN
 	        740: // Position vertical Color
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_Color_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	                
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_Color_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_Color_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 750;
 	            END_IF;
 	            
@@ -2358,8 +2386,8 @@ BEGIN
 	            "gtyp_VGR".History[2].i_code := 200;
 	            "gtyp_VGR".Workpiece.s_type  := #ls_Color;
 	            
-	            #lx_Start_TON_Wait := TRUE;
-	            #lt_TON_Wait := T#500ms;
+	            #lx_Start_TON_Wait  := TRUE;
+	            #lt_TON_Wait        := T#500ms;
 	            
 	            IF #lfb_TON_Wait.Q THEN
 	                #lx_Start_TON_Wait := FALSE;
@@ -2369,11 +2397,13 @@ BEGIN
 	        760: // Position vertical pre NFC
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	                
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 770;
 	            END_IF;
 	            
@@ -2430,11 +2460,13 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 810;
 	            END_IF;
 	            
@@ -2451,11 +2483,13 @@ BEGIN
 	            
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_NFC_vertical - "gtyp_VGR".di_Offset_Pos_DSI_NFC_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 830;
 	            END_IF;
 	            
@@ -2539,11 +2573,13 @@ BEGIN
 	        890: // Position vertical discard HBW
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_HBW_Discard_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            
 	            IF ("gtyp_VGR".vertical_Axis.di_Actual_Position <= ("gtyp_VGR".di_Pos_HBW_Discard_vertical + "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND ("gtyp_VGR".vertical_Axis.di_Actual_Position >= ("gtyp_VGR".di_Pos_HBW_Discard_vertical - "gtyp_VGR".vertical_Axis.Config.di_Pos_Window))
 	                AND "gtyp_VGR".vertical_Axis.x_Position_Reached THEN
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 900;
 	            END_IF;
 	            
@@ -2675,6 +2711,7 @@ BEGIN
 	            "gtyp_VGR".horizontal_Axis.x_Start_Positioning := TRUE;
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NiO_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            "gtyp_VGR".rotate_Axis.di_Target_Position := "gtyp_VGR".di_Pos_NiO_rotate;
 	            "gtyp_VGR".rotate_Axis.x_Start_Positioning := TRUE;
 	            
@@ -2708,6 +2745,7 @@ BEGIN
 	                "gtyp_VGR".horizontal_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".vertical_Axis.x_Start_Positioning := FALSE;
 	                "gtyp_VGR".rotate_Axis.x_Start_Positioning := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 1270;
 	            END_IF;
 	            
@@ -2762,6 +2800,8 @@ BEGIN
 	    "gtyp_VGR".x_Ready_For_Outsource    := FALSE;
 	    "gtyp_VGR".x_State_Process          := FALSE;
 	    "gtyp_VGR".x_Workpiece_NiO          := FALSE;
+	    
+	    "gtyp_VGR".vertical_Axis.i_PWM      := 800;
 	    
 	    #li_Lights := 1;
 	    #lx_Init := TRUE;
@@ -3912,6 +3952,7 @@ BEGIN
 	            IF "IX_MPO_RefSwitchOvenFeederOutside_I7" AND NOT "IX_MPO_RefSwitchOvenFeederInside_I6" THEN
 	                "QX_MPO_M4_OvenFeederRetract_Q5" := FALSE;
 	                "QX_MPO_M4_OvenFeederExtend_Q6" := FALSE;
+	                "gtyp_MPO".x_MPO_Discards_Accepted := FALSE;
 	                "gtyp_MPO".x_Discard_Ready      := TRUE;
 	                #li_StepCase := 100;
 	            END_IF;
@@ -3920,7 +3961,7 @@ BEGIN
 	            
 	            #lx_Time_Error := TRUE;
 	            
-	            IF "gtyp_VGR".x_MPO_Discards AND "IX_MPO_LightBarrierOven_I9" THEN
+	            IF "gtyp_VGR".x_MPO_Discards AND NOT "IX_MPO_LightBarrierOven_I9" THEN
 	                "gtyp_Interface_Dashboard".Subscribe.State_MPO.x_active := TRUE;
 	                "gtyp_MPO".History  := "gtyp_VGR".History;
 	                "gtyp_MPO".Workpiece := "gtyp_VGR".Workpiece;
@@ -3934,13 +3975,19 @@ BEGIN
 	            IF #lfb_TON_Error.Q THEN
 	                #li_Lights := 4;
 	                #lx_Time_Error := FALSE;
+	                "gtyp_Interface_Dashboard".Subscribe.State_Order.ldt_ts := DT_TO_LDT(#ldt_MQTT);
+	                "gtyp_Interface_Dashboard".Subscribe.State_Order.s_state := 'WAITING_FOR_ORDER';
+	                "gtyp_Interface_Dashboard".Subscribe.State_Order.s_type := '';
 	                "gtyp_Interface_Dashboard".Subscribe.State_MPO.x_active := FALSE;
+	                "gtyp_MPO".x_Discard_Ready := FALSE;
+	                "gtyp_MPO".x_MPO_Discards_Accepted := FALSE;
 	                "gtyp_MPO".x_Error := TRUE;
 	                #li_StepCase := 0;
 	            END_IF;
 	            
 	        105: // VGR outside oven feeder - oven feeder retract
 	            IF NOT "gtyp_VGR".x_MPO_Discards AND "IX_MPO_RefSwitchOvenFeederOutside_I7" AND NOT "IX_MPO_RefSwitchOvenFeederInside_I6" THEN
+	                "gtyp_MPO".x_MPO_Discards_Accepted := FALSE;
 	                "QX_MPO_M4_OvenFeederRetract_Q5" := TRUE;
 	                "QX_MPO_M4_OvenFeederExtend_Q6" := FALSE;
 	                #li_StepCase := 110;
@@ -4174,7 +4221,7 @@ BEGIN
 	            "QX_MPO_ValveFeeder_Q14" := TRUE;
 	            
 	            #lx_Start_TON_Wait := TRUE;
-	            #lt_TON_Wait := T#2000ms;
+	            #lt_TON_Wait := T#1000ms;
 	            
 	            IF #lfb_TON_Wait.Q THEN
 	                #lx_Start_TON_Wait := FALSE;
@@ -5504,6 +5551,7 @@ BEGIN
 	                "gtyp_Setup".x_Final_Positioning := FALSE;
 	                "gtyp_Setup".x_Home_Positioning := FALSE;
 	                "gtyp_Setup".x_Start_Offset := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 20;
 	            END_IF;
 	            
@@ -5575,6 +5623,7 @@ BEGIN
 	            END_IF;
 	            
 	        110: // Position vertical Axis + Offset
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := #ldi_Pos_Vertical - #ldi_Offset_Vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
 	            
@@ -5631,6 +5680,7 @@ BEGIN
 	            END_IF;
 	            
 	        150: // homing vertical axis
+	            "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	            "gtyp_VGR".vertical_Axis.x_Reference := TRUE;
 	            
 	            IF NOT "gtyp_VGR".vertical_Axis.x_Referenced THEN
@@ -6327,6 +6377,7 @@ BEGIN
 	                "gtyp_VGR".horizontal_Axis.x_Reference := FALSE;
 	                "gtyp_VGR".vertical_Axis.x_Reference := FALSE;
 	                "gtyp_VGR".rotate_Axis.x_Reference := FALSE;
+	                "gtyp_VGR".vertical_Axis.i_PWM := 800;
 	                #li_StepCase := 20;
 	            END_IF;
 	            
@@ -6392,6 +6443,7 @@ BEGIN
 	            END_IF;
 	            
 	        100: // Position vertical Axis
+	            "gtyp_VGR".vertical_Axis.i_PWM := 500;
 	            "gtyp_VGR".vertical_Axis.di_Target_Position := "gtyp_VGR".di_Pos_Park_vertical;
 	            "gtyp_VGR".vertical_Axis.x_Start_Positioning := TRUE;
 	            
