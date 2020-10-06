@@ -1,5 +1,2 @@
-Node-RED/* linguist-vendored=false
-PLC_S7_1500/* linguist-vendored=true
-PLC_S7_1500_exercises/* linguist-vendored=true
-PLC_SCL_sources/* linguist-vendored=true
+Node-RED/settings.js -linguist-vendored
 doc/* linguist-documentation
