@@ -1,3 +1,7 @@
+## Raspberry Pi 4
+*user:* pi
+*password:* ft-IOTpi2
+
 ## Node-RED
 
 [Node-RED](https://nodered.org/) is a powerful tool for connecting various hardware and APIs. In this project Node-RED is used to convert MQTT <--> OPC/UA.
