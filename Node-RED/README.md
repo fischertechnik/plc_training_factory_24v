@@ -1,7 +1,8 @@
 ## Raspberry Pi 4
+The SD card image for Raspberry Pi 4 you can download here:
+[Rpi SD card image](https://github.com/fischertechnik/plc_training_factory_24v/releases/download/V01/2020-07-15-lite-IOTpi2.zip)
 
 **user:** pi
-
 **password:** ft-IOTpi2
 
 ## Node-RED
