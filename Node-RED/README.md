@@ -1,6 +1,8 @@
 ## Raspberry Pi 4
-*user:* pi
-*password:* ft-IOTpi2
+
+**user:** pi
+
+**password:** ft-IOTpi2
 
 ## Node-RED
 
