@@ -11,6 +11,9 @@ This project contains the PLC programs, the IOT gateway SD card image with [Node
 | [PLC_SCL_sources](PLC_SCL_sources/README.md)               | PLC sources as SCL (Structured Control Language)     |
 | [TxtGatewayPLC](TxtGatewayPLC/README.md)                   | C program TxtGatewayPLC.cloud for the TXT controller |
 
+## First Steps
+* **In the PLC examples PWM must be activated on the adapter boards. Please check the jumpers and activate all PWMs if they are disabled!**
+
 ## Controllers
 The standard demo scenario is implemented with the [www.fischertechnik-cloud.com](https://www.fischertechnik-cloud.com). It is also possible to use the PLC program without the fischertechnik cloud. In this case the local Node-RED dashboard can be used.
 
