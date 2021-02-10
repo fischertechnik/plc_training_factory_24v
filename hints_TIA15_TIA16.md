@@ -1,6 +1,6 @@
-# Hints for converting from TIA16 to TIA15
+# Hints for Converting from TIA16 to TIA15
 
-1. Create new empty TIA15 project.
+1. Create new empty TIA15 project
 
 2. Add hardware to project
 
@@ -10,7 +10,7 @@
 
 ![hints_TIA15_TIA16](doc/hints_TIA15_TIA16_1.png "1")
 
-5. Generate the Siemens program blocks (PBs, FBs, etc.) with Generate blocks from source
+5. Generate the Siemens program blocks with Generate blocks from source
 
 ![hints_TIA15_TIA16](doc/hints_TIA15_TIA16_2.png "2")
 
