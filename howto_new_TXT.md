@@ -8,6 +8,7 @@ This How-To describes the steps how to setup a new TXT controller of the fischer
   - Remove old TXT controller
   - Install new TXT controller
   - Restore connections (see picture)
+  
 ![txt_new](doc/TXT_new.png "TXT new")
 
 ## 2. TXT Settings
