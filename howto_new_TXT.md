@@ -15,7 +15,7 @@ This How-To describes the steps how to setup a new TXT controller of the fischer
 Change TXT settings:
   - **Role**: Online: Cloud-Client, Offline: MQTT Broker
   - **Security settings**: Enable WEB Server and SSH Daemon
-  - **Network settings**: disable Bluetooth, activate WLAN Client, setup [network WLAN settings](Network_Config.md) for the TXT
+  - **Network settings**: disable Bluetooth, activate WLAN Client, setup DHCP (see analogous to [network WLAN settings](https://github.com/fischertechnik/txt_training_factory/blob/master/doc/Network_Config.md)
   
 Update Client reservation on Nano Router:
   - **Nano Router**: open 192.168.0.252 in WEB browser user:admin, password:admin, edit MAC in address reservation
