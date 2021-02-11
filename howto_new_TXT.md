@@ -21,7 +21,7 @@ Update Client reservation on Nano Router:
   - **Nano Router**: open 192.168.0.252 in WEB browser user:admin, password:admin, edit MAC in address reservation
 
 ## 3. Deploy C Programs
-Use TXT [WEB server](WEBServer.md) to copy files from PC to the TXT controller
+Use TXT [WEB server](https://github.com/fischertechnik/txt_training_factory/blob/master/doc/WEBServer.md) to copy files from PC to the TXT controller
   - Online: Copy C program "TxtGatewayPLC.cloud" to the folder "**Cloud**"
   - Offline: Copy C program "TxtGatewayOfflinePLC" to the folder "**C-Program**"
 Set *AutoLoad* for the program
