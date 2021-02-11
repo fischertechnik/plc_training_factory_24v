@@ -22,8 +22,8 @@ Update Client reservation on Nano Router:
 
 ## 3. Deploy C Programs
 Use TXT [WEB server](WEBServer.md) to copy files from PC to the TXT controller
-  - Online: Copy C program "TxtGatewayOfflinePLC" to the folder "Cloud"
-  - Offline: Copy C program "TxtGatewayPLC.cloud" to the folder "C-Program"
+  - Online: Copy C program "TxtGatewayPLC.cloud" to the folder "**Cloud**"
+  - Offline: Copy C program "TxtGatewayOfflinePLC" to the folder "**C-Program**"
 Set *AutoLoad* for the program
 
 ## 4. Power Off and On
