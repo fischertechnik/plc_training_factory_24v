@@ -8,9 +8,9 @@ You need a TXT controller with the current firmware version 4.6.6.
 
 ## 1. Replace TXT Controller
   - Remove connections (+9V, USB, EXT-adaptor, inputs and  +9V_out)
-  - Remove old TXT controller ()
+  - Remove old TXT controller
   - Install new TXT controller
-  - Restore connections (see picture)
+  - Restore connections (see picture below)
   
 ![txt_new](doc/TXT_new.png "TXT new")
 
