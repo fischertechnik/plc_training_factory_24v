@@ -3,7 +3,13 @@ This How-To describes the steps how to setup a new TXT controller of the fischer
 
 > If you have any questions, please contact: fischertechnik-technik@fischer.de
 
-## 1. TXT Settings
+## 1. Replace TXT Controller
+  - Remove connections
+  - Remove old TXT controller
+  - Install new TXT controller
+  - Restore connections (see picture)
+
+## 2. TXT Settings
 Change TXT settings:
   - **Role**: Online: Cloud-Client, Offline: MQTT Broker
   - **Security settings**: Enable WEB Server and SSH Daemon
@@ -12,16 +18,16 @@ Change TXT settings:
 Update Client reservation on Nano Router:
   - **Nano Router**: open 192.168.0.252 in WEB browser user:admin, password:admin, edit MAC in address reservation
 
-## 2. Deploy C Programs
+## 3. Deploy C Programs
 Use TXT [WEB server](WEBServer.md) to copy files from PC to the TXT controller
   - Online: Copy C program "TxtGatewayOfflinePLC" to the folder "Cloud"
   - Offline: Copy C program "TxtGatewayPLC.cloud" to the folder "C-Program"
 Set *AutoLoad* for the program
 
-## 3. Power Off and On
+## 4. Power Off and On
 Switch off and on the TXT controller in the training model.
 
-## 4. Start and Check
+## 5. Start and Check
 Start the factory.
 
 # Hints
