@@ -3,9 +3,12 @@ This How-To describes the steps how to setup a new TXT controller of the fischer
 
 > If you have any questions, please contact: fischertechnik-technik@fischer.de
 
+## Preparation
+You need a TXT controller with the current firmware version 4.6.6.
+
 ## 1. Replace TXT Controller
-  - Remove connections
-  - Remove old TXT controller
+  - Remove connections (+9V, USB, EXT-adaptor, +9Vout, inputs and outputs)
+  - Remove old TXT controller ()
   - Install new TXT controller
   - Restore connections (see picture)
   
