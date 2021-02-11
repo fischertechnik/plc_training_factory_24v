@@ -17,7 +17,7 @@ Change TXT settings:
   - **Security settings**: Enable WEB Server and SSH Daemon
   - **Network settings**: disable Bluetooth, activate WLAN Client, setup DHCP (see analogous to [network WLAN settings](https://github.com/fischertechnik/txt_training_factory/blob/master/doc/Network_Config.md)
   
-Update Client reservation on Nano Router:
+Update Client address reservation on Nano Router:
   - **Nano Router**: open 192.168.0.252 in WEB browser user:admin, password:admin, edit MAC in address reservation
 
 ## 3. Deploy C Programs
