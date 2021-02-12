@@ -7,7 +7,10 @@ This How-To describes the steps how to setup a new TXT controller of the fischer
 You need a TXT controller with the current firmware version 4.6.6.
 
 ## 1. Update TXT Firmware
-Upgrade the TXT controller firmware **via ROBO Pro software**. Install [ROBO Pro 4.6.6](https://github.com/fischertechnik/FT-TXT/releases/download/v4.6.6/ROBOPro466.msi) and connect each TXT controller with the computer via USB cable. Start ROBO Pro, select TXT controller and USB interface and open the Test-Interface window. Be patient, the TXT firmware update takes about 5-10 minutes per TXT controller. DO NOT interrupt the power supply, because otherwise the controller is defective and needs to be repaired. All the files on the TXT controller will be overwritten after this step.
+Update the TXT controller firmware **via ROBO Pro software**.
+  - Install [ROBO Pro 4.6.6](https://github.com/fischertechnik/FT-TXT/releases/download/v4.6.6/ROBOPro466.msi)
+  - Connect TXT controller with the computer via USB cable
+  - Start ROBO Pro, click on "COM/USB" symbol and select TXT controller and USB interface and open the Test-Interface window. Be patient, the TXT firmware update takes about 5-10 minutes. DO NOT interrupt the power supply, because otherwise the controller is defective and needs to be repaired. All the files on the TXT controller will be overwritten after this step.
 
 ## 2. Replace TXT Controller
   - Remove connections (+9V, USB, EXT-adaptor, inputs and  +9V_out)
