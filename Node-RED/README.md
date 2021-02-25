@@ -1,4 +1,4 @@
-## IOT Gateway
+## IOT Gateway (Raspberry Pi 4)
 
 ### Hardware
 - [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/)
