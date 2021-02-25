@@ -1,7 +1,7 @@
 ## IOT Gateway
 
 ### Hardware
-- [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+- [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/)
 - [Strom Pi 3](https://joy-it.net/en/products/RB-StromPi3)
 
 The SD card image for Raspberry Pi 4 can be downloaded [here](https://github.com/fischertechnik/plc_training_factory_24v/releases/download/V01/2020-07-15-lite-IOTpi2.zip)
