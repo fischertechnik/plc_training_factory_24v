@@ -4,7 +4,7 @@
 - [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/)
 - [Strom Pi 3](https://joy-it.net/en/products/RB-StromPi3)
 
-The SD card image for Raspberry Pi 4 can be downloaded [here](https://github.com/fischertechnik/plc_training_factory_24v/releases/download/V01/2020-07-15-lite-IOTpi2.zip)
+The SD card image for Raspberry Pi 4 can be downloaded [here](https://github.com/fischertechnik/plc_training_factory_24v/releases/download/V04/2021-06-25-lite-IOTpi2.zip)
 
 Please use e. g. the tool *Win32DiskImager* to write the Raspberry Pi 4 image to a >=4GB micro SD card. This micro SD card image is ready to use. The flows contain also a local dashboard for *Training Factory Industry 4.0 24V*.
 
