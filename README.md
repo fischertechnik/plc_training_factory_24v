@@ -37,4 +37,4 @@ The factory consists of the following stations:
 The [Node-RED](https://nodered.org/) flows for the Training Factory Industry 4.0 24V you can find in [Node-RED](Node-RED/README.md) folder. 
 
 ## OPC-UA Interface
-You can use the [UaExpert](https://www.unified-automation.com/) tool to determine the OPC-UA interface of the Training Factory Industry 4.0 24V (see [screenshots](OPC-UA.md).
+You can use the [UaExpert](https://www.unified-automation.com/) tool to determine the OPC-UA interface of the Training Factory Industry 4.0 24V (see [screenshots](OPC-UA.md)).
