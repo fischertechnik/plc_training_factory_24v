@@ -1,19 +1,19 @@
 # OPC-UA Interface
 
 ## Connection with UaExpert
-![Connection](doc/Connection.png "Connection")
+![Connection](doc/Connection.PNG "Connection")
 
 ## Overview Signals
-![DataBlocksGlobal](doc/DataBlocksGlobal.png "DataBlocksGlobal")
+![DataBlocksGlobal](doc/DataBlocksGlobal.PNG "DataBlocksGlobal")
 
 ## Signals
 ![DataBlocksGlobal](doc/DataBlocksGlobal.png "DataBlocksGlobal")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup")
-![DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis.png "DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_SSC")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_MPO")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_HBW")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_VGR")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_SLD")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_TXT_controller")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_Interface_Dashboard")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_Setup")
+![DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis](doc/DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis.PNG "DeviceSet_PLC_DataBlocksGlobal_gtyp_SetupAxis")
